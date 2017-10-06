@@ -5,21 +5,20 @@ import { MyApp } from './app.component';
 import {Http, HttpModule} from '@angular/http';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { DetailsPage } from '../pages/details/details';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieDataProvider } from '../providers/movie-data/movie-data';
 import {RegisterPage} from "../pages/register/register";
-import {MovieRatingProvider} from "../providers/movie-rating/movie-rating";
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    DetailsPage,
     HomePage,
     RegisterPage,
     TabsPage
@@ -33,7 +32,7 @@ import {MovieRatingProvider} from "../providers/movie-rating/movie-rating";
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    DetailsPage,
     HomePage,
     RegisterPage,
     TabsPage
@@ -43,7 +42,7 @@ import {MovieRatingProvider} from "../providers/movie-rating/movie-rating";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MovieDataProvider,
-    MovieRatingProvider
+
   ]
 })
 export class AppModule {}

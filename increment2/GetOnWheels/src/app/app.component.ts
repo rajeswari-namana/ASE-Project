@@ -5,11 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieDataProvider } from '../providers/movie-data/movie-data';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import {MovieRatingProvider} from "../providers/movie-rating/movie-rating";
 
 @Component({
   templateUrl: 'app.html',
-  providers: [MovieDataProvider, MovieRatingProvider]
+  providers: [MovieDataProvider]
 })
 export class MyApp {
   rootPage:any = TabsPage;
