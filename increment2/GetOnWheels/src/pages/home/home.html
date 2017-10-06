@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title align="center">GetOnWheels</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+    <ion-list>
+    <ion-item *ngFor="let details of trail">
+
+      <ion-card>
+        <button [navPush]="contactPage"><img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}"></button>
+        <div class="card-title">{{details.title}}</div>
+
+        <div class="card-subtitle"><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</div>
+      </ion-card>
+
+     </ion-item>
+  </ion-list>
+</ion-content>

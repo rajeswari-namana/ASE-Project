@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title align="center">GetOnWheels</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card-title align="center">Please enter your details to register.</ion-card-title>
+  <ion-card>
+    <ion-card-header>
+      Register Form
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-line>
+        <ion-item>
+          <ion-input type="text" placeholder="Full Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="Email Id"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Re-enter Password"></ion-input>
+        </ion-item>
+        <button ion-button block outline color="light" [navPush]="aboutPage">Register</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
