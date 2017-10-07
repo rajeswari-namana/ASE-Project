@@ -10,10 +10,11 @@
     <ion-item *ngFor="let details of trail">
 
       <ion-card>
-        <button [navPush]="contactPage"><img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}"></button>
+        <img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}">
         <div class="card-title">{{details.title}}</div>
 
         <div class="card-subtitle"><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</div>
+        <button ion-button clear item-right (click)="viewItem(details)">View</button>
       </ion-card>
 
      </ion-item>

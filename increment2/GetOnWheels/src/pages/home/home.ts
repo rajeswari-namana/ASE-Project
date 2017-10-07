@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MovieDataProvider} from '../../providers/movie-data/movie-data';
 import { NavController } from 'ionic-angular';
-import {ContactPage} from "../contact/contact";
+import { DetailsPage} from '../details/details';
 
 @Component({
   selector: 'page-home',
@@ -9,18 +9,23 @@ import {ContactPage} from "../contact/contact";
   providers: [MovieDataProvider]
 })
 export class HomePage {
-  contactPage=ContactPage;
   trail:any;
 
     constructor(public navCtrl: NavController, public movieservice: MovieDataProvider) {
       this.loadpeople();
 
-  }
+    }
 
   loadpeople(){
     this.movieservice.load().
       then(data => {
       this.trail = data;
+
+    });
+  }
+  viewItem(details){
+    this.navCtrl.push(DetailsPage,{
+      details: details
     });
   }
 
