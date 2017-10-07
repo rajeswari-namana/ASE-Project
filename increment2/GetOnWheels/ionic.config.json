@@ -2,7 +2,9 @@
   "name": "moviesAround",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "proxies": [
     {
       "path": "http://localhost:8100/api",
@@ -10,4 +12,3 @@
     }
   ]
 }
-

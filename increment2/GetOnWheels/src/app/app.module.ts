@@ -8,11 +8,16 @@ import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details';
 import { TabsPage } from '../pages/tabs/tabs';
+import { WeatherPage } from '../pages/weather/weather'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieDataProvider } from '../providers/movie-data/movie-data';
 import {RegisterPage} from "../pages/register/register";
+import { Geolocation } from '@ionic-native/geolocation';
+
+import { WeatherProvider } from '../providers/weather/weather';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import {RegisterPage} from "../pages/register/register";
     DetailsPage,
     HomePage,
     RegisterPage,
-    TabsPage
+    TabsPage,
+    WeatherPage
   ],
   imports: [
     BrowserModule,
@@ -35,13 +41,17 @@ import {RegisterPage} from "../pages/register/register";
     DetailsPage,
     HomePage,
     RegisterPage,
-    TabsPage
+    TabsPage,
+    WeatherPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MovieDataProvider,
+    Geolocation,
+
+    WeatherProvider
 
   ]
 })

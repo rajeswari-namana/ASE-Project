@@ -9,7 +9,7 @@ import { DetailsPage} from '../details/details';
   providers: [MovieDataProvider]
 })
 export class HomePage {
-  trail:any;
+  traill:any;
 
     constructor(public navCtrl: NavController, public movieservice: MovieDataProvider) {
       this.loadpeople();
@@ -19,7 +19,7 @@ export class HomePage {
   loadpeople(){
     this.movieservice.load().
       then(data => {
-      this.trail = data;
+      this.traill = data;
 
     });
   }
