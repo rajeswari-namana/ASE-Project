@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WeatherPage } from '../pages/weather/weather'
+import {TheatresPage} from "../pages/theatres/theatres";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +18,7 @@ import {RegisterPage} from "../pages/register/register";
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { WeatherProvider } from '../providers/weather/weather';
+import {MoviesPage} from "../pages/movies/movies";
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { WeatherProvider } from '../providers/weather/weather';
     AboutPage,
     DetailsPage,
     HomePage,
+    TheatresPage,
+    MoviesPage,
     RegisterPage,
     TabsPage,
     WeatherPage
@@ -39,6 +43,8 @@ import { WeatherProvider } from '../providers/weather/weather';
     MyApp,
     AboutPage,
     DetailsPage,
+    TheatresPage,
+    MoviesPage,
     HomePage,
     RegisterPage,
     TabsPage,

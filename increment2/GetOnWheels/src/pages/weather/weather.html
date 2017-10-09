@@ -1,14 +1,15 @@
 <ion-header>
   <ion-navbar align="center" color="dark">
-    <ion-title>Weather</ion-title>
+    <ion-title>GetOnWheels</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <h3 align="center">Weather Details</h3>
   <div style="width : 100% ;height: 60%">
     <ion-grid *ngIf="weather">
       <ion-row>
         <ion-col align="center">
-          <h2 class="location">{{trail.full}}</h2>
+          <h3 class="location">{{trail.full}}</h3>
           <div class="icon"><img src="{{weatherData.icon_url}}" alt=""></div>
           <h3 class="desc">{{weatherData.weather}}</h3>
           <h1 class="temp">{{weatherData.temp_f}}&deg;</h1>

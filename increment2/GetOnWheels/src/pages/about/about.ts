@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {HomePage} from "../home/home";
+import {WeatherPage} from "../weather/weather";
 import {RegisterPage} from "../register/register";
 
 
@@ -9,7 +9,7 @@ import {RegisterPage} from "../register/register";
   templateUrl: 'about.html'
 })
 export class AboutPage {
-homePage=HomePage;
+weatherPage=WeatherPage;
 registerPage=RegisterPage;
 
   constructor(public navCtrl: NavController) {

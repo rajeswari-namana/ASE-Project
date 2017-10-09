@@ -9,7 +9,7 @@ import { DetailsPage} from '../details/details';
   providers: [MovieDataProvider]
 })
 export class HomePage {
-  traill:any;
+    traill:any;
 
     constructor(public navCtrl: NavController, public movieservice: MovieDataProvider) {
       this.loadpeople();
