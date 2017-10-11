@@ -19,6 +19,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 import { WeatherProvider } from '../providers/weather/weather';
 import {MoviesPage} from "../pages/movies/movies";
+import { Facebook } from '@ionic-native/facebook';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import {MoviesPage} from "../pages/movies/movies";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MovieDataProvider,
+    Facebook,
     Geolocation,
 
     WeatherProvider
