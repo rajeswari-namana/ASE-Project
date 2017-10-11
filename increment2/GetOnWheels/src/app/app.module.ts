@@ -10,6 +10,8 @@ import { DetailsPage } from '../pages/details/details';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WeatherPage } from '../pages/weather/weather'
 import {TheatresPage} from "../pages/theatres/theatres";
+import { RestaurantsPage } from '../pages/restaurants/restaurants';
+import { RestaurantInfoPage } from '../pages/restaurant-info/restaurant-info';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +22,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { WeatherProvider } from '../providers/weather/weather';
 import {MoviesPage} from "../pages/movies/movies";
 import { Facebook } from '@ionic-native/facebook';
+import { RestaurantProvider } from '../providers/restaurant/restaurant';
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { Facebook } from '@ionic-native/facebook';
     MoviesPage,
     RegisterPage,
     TabsPage,
+    RestaurantsPage,
+    RestaurantInfoPage,
     WeatherPage
   ],
   imports: [
@@ -49,7 +54,9 @@ import { Facebook } from '@ionic-native/facebook';
     HomePage,
     RegisterPage,
     TabsPage,
-    WeatherPage
+    WeatherPage,
+    RestaurantsPage,
+    RestaurantInfoPage
   ],
   providers: [
     StatusBar,
@@ -59,7 +66,8 @@ import { Facebook } from '@ionic-native/facebook';
     Facebook,
     Geolocation,
 
-    WeatherProvider
+    WeatherProvider,
+    RestaurantProvider
 
   ]
 })
