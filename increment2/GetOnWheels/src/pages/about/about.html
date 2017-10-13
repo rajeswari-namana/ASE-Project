@@ -21,9 +21,6 @@
   <div *ngIf="isLoggedIn; else facebookLogin">
     <h2>Hi, {{users.name}} ({{users.email}})</h2>
     <p>
-      Gender: {{users.gender}}
-    </p>
-    <p>
       <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
     </p>
     <p>
