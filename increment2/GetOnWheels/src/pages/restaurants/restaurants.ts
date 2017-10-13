@@ -20,21 +20,39 @@ export class RestaurantsPage {
   lat: any;
   restaurantInfo:any;
   restaurantId:any;
+  previousId:any;
 
   constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams,
                public geolocation: Geolocation, public restoService: RestaurantProvider) {
     this.lat = null;
     this.lng = null;
-
+    this.previousId = -1;
   }
 
-  loadPeople(){
+  getRandomInt() {
+    if (this.previousId < 12) {
+      this.previousId++;
+      return this.previousId;
+    }
+    else if (this.previousId == 12) {
+      this.previousId = -1;
+      return 12;
+    }
+    return this.previousId;
+  }
+
+  loadRestaurants(){
     this.restoService.loadRestaurantsNearLocation()
     .then(data => {
         this.restaurantInfo = data;
-        this.restaurantId=data.id
+        if (Array.isArray(this.restaurantInfo)) {
+          this.restaurantInfo.forEach(function(resto){            
+              resto['imageURL'] = '../../assets/restaurantImages/img'+ this.getRandomInt() +'.jpeg';
+          },this);
+        }
     });
     }
+
 
   getUserLocation() {
     this.platform.ready().then(() => {
@@ -47,7 +65,7 @@ export class RestaurantsPage {
 
   ionViewDidLoad() {
     this.getUserLocation();
-    this.loadPeople();
+    this.loadRestaurants();
   }
 
   viewRestaurantInfo(restaurantid){

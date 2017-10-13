@@ -7,17 +7,17 @@
 <ion-header>
   
     <ion-navbar>
-      <ion-title>restaurantInfo</ion-title>
+      <ion-title>Restaurant Info</ion-title>
     </ion-navbar>
   
   </ion-header>
   
   
-  <ion-content padding>
+  <ion-content padding >
     <ion-card>
-      <ion-card-header>{{restaurantInfo.name}}</ion-card-header>
+      <ion-card-header id="card-header" text-wrap >{{restaurantInfo.name}}</ion-card-header>
       <ion-card-content>
-        <div class="card-background">
+        <div>
             <div><b>Cusine: </b>{{restaurantInfo.cuisines}}</div>
             <div><b>Address: </b>{{restaurantInfo.location.address}}</div>
             <div><b>Avg Cost: </b>{{restaurantInfo.average_cost_for_two}} {{restaurantInfo.currency}}</div>      
