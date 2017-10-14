@@ -7,35 +7,19 @@
     <ion-card-content>
       <ion-list no-line>
         <ion-item>
-          <ion-input type="text" placeholder="Username"></ion-input>
+          <ion-input type="text" placeholder="Username" [(ngModel)]="user.email"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="password" placeholder="Password"></ion-input>
+          <ion-input type="password" placeholder="Password" min="8"[(ngModel)]="user.password"></ion-input>
         </ion-item>
-        <button ion-button block outline color="light" [navPush]="weatherPage">Log in</button>
-        </ion-list>
+        <button ion-button block outline color="light" (click)="login(user)">Log in</button>
+      </ion-list>
+
     </ion-card-content>
-  </ion-card>
-
-<div>
-  <div *ngIf="isLoggedIn; else facebookLogin">
-    <h2>Hi, {{users.name}} ({{users.email}})</h2>
-    <p>
-      <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
-    </p>
-    <p>
-      <button ion-button icon-right (click)="logout()">
-        Logout
-      </button>
-    </p>
-  </div>
-  <ng-template #facebookLogin>
-    <button ion-button icon-right (click)="login()">
-      Login with
-      <ion-icon name="logo-facebook"></ion-icon>
+    <button ion-button color="danger">
+      <ion-icon name="logo-googleplus"></ion-icon>
+      Login with Google
     </button>
-  </ng-template>
-</div>
-
-  <button class="bottom" ion-item [navPush]="registerPage">Don't have an account? Sign up</button>
+  </ion-card>
+  <button class="bottom" ion-item (click)="register()">Don't have an account? Sign up</button>
 </ion-content>

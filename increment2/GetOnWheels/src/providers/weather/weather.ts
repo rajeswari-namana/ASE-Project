@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {IonicPage} from "ionic-angular";
 
 /*
   Generated class for the WeatherProvider provider.
@@ -8,9 +9,13 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
 @Injectable()
 export class WeatherProvider {
-data: any;
+data: any={};
+
+
+
 
 
   constructor(public http: Http) {
@@ -32,6 +37,21 @@ data: any;
         })
     })
   }
+   weatherForecast(latitude, longitude){
+     return new Promise(resolve => {
+       this.http.get("http://api.wunderground.com/api/9eff93bd00e32bc4/hourly/q/"+latitude+","+longitude+".json")
+         .map(res => res.json())
+         .subscribe(data => {
+
+           this.data = data;
+
+           resolve(this.data);
+            //console.log(data);
+
+
+         })
+     })
+   }
 
 
 }
