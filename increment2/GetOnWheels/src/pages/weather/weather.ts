@@ -1,7 +1,8 @@
 import { Component ,ViewChild ,ElementRef } from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from "@ionic-native/geolocation";
 import { WeatherProvider } from "../../providers/weather/weather";
+import { AngularFireAuth} from "angularfire2/auth";
 
 declare var google;
 
@@ -20,7 +21,7 @@ full_address : any={};
 
 @ViewChild('map') mapElement: ElementRef;
 map: any;
-  constructor(public navCtrl: NavController,private geolocation : Geolocation, private weather : WeatherProvider,public navParams: NavParams ) {
+  constructor(public navCtrl: NavController,private geolocation : Geolocation, private weather : WeatherProvider,public navParams: NavParams, private afAuth: AngularFireAuth, private toast: ToastController ) {
 
   }
   getUserPosition(){
@@ -50,6 +51,25 @@ map: any;
         this.full_address= this.weatherData.observation_location;
 
       })
+  }
+  ionViewWillLoad(){
+    this.afAuth.authState.subscribe(data => {
+      if(data.email && data.uid){
+      this.toast.create({
+        message: `welcome , ${data.email}`,
+        duration: 3000
+
+      }).present();
+      }
+      else{
+        this.toast.create({
+          message: `welcome wrong`,
+          duration: 3000
+
+        }).present();
+
+      }
+    });
   }
 
 }

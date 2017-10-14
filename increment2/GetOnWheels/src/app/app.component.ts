@@ -6,7 +6,10 @@ import { MovieDataProvider } from '../providers/movie-data/movie-data';
 import { WeatherProvider } from "../providers/weather/weather";
 
 
+
 import { TabsPage } from '../pages/tabs/tabs';
+import {AboutPage} from "../pages/about/about";
+
 
 @Component({
   templateUrl: 'app.html',
@@ -16,7 +19,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   ]
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = AboutPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

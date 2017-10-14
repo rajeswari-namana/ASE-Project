@@ -19,6 +19,12 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 import { WeatherProvider } from '../providers/weather/weather';
 import {MoviesPage} from "../pages/movies/movies";
+import {MallsinfoPage} from "../pages/mallsinfo/mallsinfo";
+import {MallsdetailsProvider} from "../providers/mallsdetails/mallsdetails";
+import {AngularFireModule} from "angularfire2";
+import {config} from "./app.firebase.config";
+import { AngularFireAuthModule} from "angularfire2/auth";
+
 
 
 @NgModule({
@@ -31,24 +37,28 @@ import {MoviesPage} from "../pages/movies/movies";
     MoviesPage,
     RegisterPage,
     TabsPage,
-    WeatherPage
+    WeatherPage,
+    MallsinfoPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
+    RegisterPage,
     DetailsPage,
     TheatresPage,
     MoviesPage,
     HomePage,
-    RegisterPage,
     TabsPage,
-    WeatherPage
+    WeatherPage,
+    MallsinfoPage
   ],
   providers: [
     StatusBar,
@@ -57,7 +67,8 @@ import {MoviesPage} from "../pages/movies/movies";
     MovieDataProvider,
     Geolocation,
 
-    WeatherProvider
+    WeatherProvider,
+    MallsdetailsProvider
 
   ]
 })
