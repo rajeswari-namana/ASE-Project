@@ -1,0 +1,39 @@
+page-signin {
+
+
+  .background {
+    background-image: url('../../assets/s1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+  ion-card.card {
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+  }
+  ion-input {
+    color: black;
+
+  }
+
+  a, p,
+  ion-card-header.card-header {
+    color: #ffffff;
+  }
+  .item {
+    margin-bottom: 1px;
+    background: rgba(242, 243, 244, 0.8);
+    border: medium none;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  ion-card {
+    padding-top: 180px;
+  }
+}
