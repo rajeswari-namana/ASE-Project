@@ -29528,6 +29528,16 @@ page-register ion-card {
   padding-top: 100px;
 }
 
+page-restaurant-info #map {
+  width: 100%;
+  height: 100%;
+}
+
+page-restaurant-info .abc {
+  width: 93%;
+  height: 20%;
+}
+
 page-restaurant-info .card-background {
   background-color: #e43601;
   font-size: 52px;
@@ -29536,6 +29546,21 @@ page-restaurant-info .card-background {
 page-restaurant-info .card-header {
   color: #e43601;
   font-size: 30px;
+}
+
+page-restaurant-info .review-button {
+  color: red;
+  background: white;
+}
+
+page-restaurant-info .reviews {
+  color: black;
+  font-size: 12px;
+}
+
+page-restaurant-map #map {
+  width: 100%;
+  height: 100%;
 }
 
 page-restaurants .card-background {

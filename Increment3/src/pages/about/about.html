@@ -21,5 +21,25 @@
       Login with Google
     </button>
   </ion-card>
+
+  <div>
+    <div *ngIf="isLoggedIn; else facebookLogin">
+      
+      <p>
+        <button ion-button icon-right (click)="logout()">
+          Logout
+        </button>
+      </p>
+    </div>
+    <ng-template #facebookLogin>
+      <button ion-button icon-right (click)="loginFB()">
+        Login with
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </ng-template>
+
+  </div>
+
+
   <button  ion-item (click)="register()">Don't have an account? Sign up</button>
 </ion-content>

@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 458:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantInfoPageModule", function() { return RestaurantInfoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantMapPageModule", function() { return RestaurantMapPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__restaurant_info__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__restaurant_map__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RestaurantInfoPageModule = (function () {
-    function RestaurantInfoPageModule() {
+var RestaurantMapPageModule = (function () {
+    function RestaurantMapPageModule() {
     }
-    return RestaurantInfoPageModule;
+    return RestaurantMapPageModule;
 }());
-RestaurantInfoPageModule = __decorate([
+RestaurantMapPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__restaurant_info__["a" /* RestaurantInfoPage */],
+            __WEBPACK_IMPORTED_MODULE_2__restaurant_map__["a" /* RestaurantMapPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__restaurant_info__["a" /* RestaurantInfoPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__restaurant_map__["a" /* RestaurantMapPage */]),
         ],
     })
-], RestaurantInfoPageModule);
+], RestaurantMapPageModule);
 
-//# sourceMappingURL=restaurant-info.module.js.map
+//# sourceMappingURL=restaurant-map.module.js.map
 
 /***/ })
 
