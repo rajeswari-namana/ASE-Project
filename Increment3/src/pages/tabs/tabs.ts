@@ -10,6 +10,8 @@ import {IonicPage, ToastController} from "ionic-angular";
 import {SigninPage} from "../signin/signin";
 import {ShoppingPage} from "../shopping/shopping";
 import {RestaurantsPage} from "../restaurants/restaurants";
+import {AccountPage} from "../account/account";
+
 
 @IonicPage()
 @Component({
@@ -23,6 +25,8 @@ export class TabsPage {
   tab3Root = ShoppingPage;
   tab4Root = RestaurantsPage;
   tab5Root = SigninPage;
+  tab6Root = AccountPage;
+  
 
   constructor(private afAuth: AngularFireAuth, private toast: ToastController) {
 

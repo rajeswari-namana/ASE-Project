@@ -11,11 +11,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestaurantProvider {
   restaurants: any;
-  //API URL for FourSquare
+  //API URL for Zomato
   apiURL: any;
   public key: any;
   public infoKey:any;
   public apiRestoInfoURL: any;
+  public apiRestoReviewURL: any;
 
   constructor(public http: Http) {
     this.restaurants = null;
@@ -70,6 +71,31 @@ export class RestaurantProvider {
           console.log("SERVICE RESPONSE :" + JSON.stringify(data));
           this.restaurants = data;
           resolve(this.restaurants);
+        });
+    })
+  }
+
+  loadRestaurantReview(restoId) {
+    this.apiRestoReviewURL='https://developers.zomato.com/api/v2.1/reviews?res_id='+restoId
+    let opt: RequestOptions;
+    let myheaders = new Headers();
+    this.key='16a979934d2da2dbd8dd6cc21483e354';
+    this.infoKey=restoId;
+    myheaders.append('Accept', 'application/json');
+    myheaders.append('user-key', this.key);
+    opt = new RequestOptions({
+      headers: myheaders
+    });
+    console.log("API URL2 : " + this.apiRestoReviewURL);
+    return new Promise(resolve => {
+      console.log("API URL3 : " + this.apiRestoReviewURL);
+        this.http.get(this.apiRestoReviewURL,opt)
+        .map(res => res.json())
+        .subscribe(data => {
+          // we've got back the raw data, now generate the core schedule data
+          // and save the data for later reference
+          console.log("SERVICE RESPONSE Review :" + JSON.stringify(data));
+          resolve(data.user_reviews);
         });
     })
   }

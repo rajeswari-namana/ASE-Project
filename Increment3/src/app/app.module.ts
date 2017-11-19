@@ -14,6 +14,7 @@ import {TheatresPage} from "../pages/theatres/theatres";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieDataProvider } from '../providers/movie-data/movie-data';
+import {RestaurantMapPage} from '../pages/restaurant-map/restaurant-map';
 
 import { Geolocation } from '@ionic-native/geolocation';
 
@@ -33,6 +34,10 @@ import firebase from 'firebase';
 import {RestaurantsPage} from "../pages/restaurants/restaurants";
 import {RestaurantInfoPage} from "../pages/restaurant-info/restaurant-info";
 import {RestaurantProvider} from "../providers/restaurant/restaurant";
+import {AccountPage} from "../pages/account/account";
+
+import { SessionProvider } from '../providers/session/session';
+import { Facebook } from '@ionic-native/facebook';
 
 
 @NgModule({
@@ -50,7 +55,9 @@ import {RestaurantProvider} from "../providers/restaurant/restaurant";
     RestaurantInfoPage,
     SigninPage,
     ForecastPage,
-    MallsinfoPage
+    MallsinfoPage,
+    RestaurantMapPage,
+    AccountPage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +80,9 @@ import {RestaurantProvider} from "../providers/restaurant/restaurant";
     RestaurantsPage,
     RestaurantInfoPage,
     ForecastPage,
-    MallsinfoPage
+    MallsinfoPage,
+    RestaurantMapPage,
+    AccountPage
   ],
   providers: [
     StatusBar,
@@ -85,7 +94,9 @@ import {RestaurantProvider} from "../providers/restaurant/restaurant";
     WeatherProvider,
     GooglePlus,
     MallsdetailsProvider,
-    RestaurantProvider
+    RestaurantProvider,
+    SessionProvider,
+    Facebook,
 
   ]
 })

@@ -1,4 +1,14 @@
 page-restaurant-info {
+    #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      .abc {
+        width: 93%;
+        height: 20%;
+      }
+
     .card-background {
         background-color: rgb(228, 54, 1);
         font-size: 52px;
@@ -9,4 +19,13 @@ page-restaurant-info {
         font-size: 30px;
     }
 
+    .review-button{
+        color:red;
+        background:white;
+    }
+
+    .reviews{
+        color:black;
+        font-size: 12px;
+    }
 }
