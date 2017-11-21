@@ -10,7 +10,7 @@ import { DetailsPage} from '../details/details';
 })
 export class HomePage {
     traill:any;
-
+  genreinfo:any;
     constructor(public navCtrl: NavController, public movieservice: MovieDataProvider, public navParams: NavParams) {
       this.loadpeople();
 
@@ -20,7 +20,8 @@ export class HomePage {
     this.movieservice.load().
       then(data => {
       this.traill = data;
-
+      this.genreinfo=this.traill.genre_ids;
+console.log(this.genreinfo)
     });
   }
   viewItem(details){

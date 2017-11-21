@@ -12,9 +12,38 @@
       <ion-card>
         <img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}">
         <div class="card-title">{{details.title}}</div>
+        <div class="card-subtitle">
 
-        <div class="card-subtitle"><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</div>
+          <ion-col><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</ion-col>
+          <ion-col><ion-icon *ngIf="details.adult==false">U</ion-icon></ion-col></div>
+
+
+          <ion-row *ngFor="let det of details.genre_ids">
+            <ion-col ion-button small color="light" *ngIf="det ==28">Action</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==18">Drama</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==12">Adventure</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==16">Animation</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==35">Comedy</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==80">Crime</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==99">Documentary</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==10751">Family</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==14">Fantasy</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==36">History</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==27">Horror</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==10402">Music</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==9648">Mystery</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==10749">Romance</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==878">Science Fiction</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==10770">TV Movie</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==53">Thriller</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==10752">War</ion-col>
+            <ion-col ion-button small color="light" *ngIf="det ==37">Western</ion-col>
+
+
+        </ion-row>
+        <div>
         <button ion-button clear item-right (click)="viewItem(details)">View</button>
+        </div>
       </ion-card>
 
      </ion-item>
