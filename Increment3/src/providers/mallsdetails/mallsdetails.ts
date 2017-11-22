@@ -11,21 +11,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MallsdetailsProvider {
   data: any;
+
   constructor(public http: Http) {
     console.log('Hello MallsdetailsProvider Provider');
   }
 
-  detailedMalls(mallsinfo){
+  detailedMalls(mallsinfo) {
     return new Promise(resolve => {
-      this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+mallsinfo+"&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw&callback=initmap")
+      this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=" + mallsinfo + "&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw&callback=initmap")
         .map(res => res.json())
         .subscribe(data => {
 
           this.data = data;
           resolve(this.data.result);
-
-
-
 
 
         })
@@ -37,4 +35,16 @@ export class MallsdetailsProvider {
     return new Array(size);
   }
 
+  detailedDeals(lat, lon) {
+    return new Promise(resolve => {
+      this.http.get("http://api.sqoot.com/v2/deals?api_key=hws8td&location=" + lat + "," + lon + "&category_slugs=electronics,womens-clothing,beauty_health,audio,automotive,automative-services,baby,bars-clubs,beauty_health,bowling,bridal,electronics,facial")
+        .map(res => res.json())
+        .subscribe(data => {
+
+          this.data = data;
+          resolve(this.data);
+          console.log(this.data);
+        });
+    });
+  }
 }

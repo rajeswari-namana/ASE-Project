@@ -2,6 +2,7 @@ import { Component,ViewChild ,ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from "@ionic-native/geolocation";
 import {MallsinfoPage} from "../mallsinfo/mallsinfo";
+import{DealsPage} from "../deals/deals";
 
 declare var google;
 @Component({
@@ -13,6 +14,8 @@ export class ShoppingPage {
   options : GeolocationOptions;
   currentPos : Geoposition;
   places : Array<any>;
+  currentLat: any;
+  currentLon: any;
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   constructor(public navCtrl: NavController,private geolocation : Geolocation ) {
@@ -26,6 +29,9 @@ export class ShoppingPage {
     this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
 
       this.currentPos = pos;
+      this.currentLat=pos.coords.latitude;
+      this.currentLon=pos.coords.longitude;
+
       console.log(pos);
       this.addMap(pos.coords.latitude,pos.coords.longitude);
 
@@ -108,6 +114,12 @@ export class ShoppingPage {
       position: place.geometry.location,
 
     });
+  }
+  getDeals(latitude,longitude) {
+    this.navCtrl.push(DealsPage, {
+      lat: latitude,
+    lon:longitude
+  });
   }
 
   viewItem(placeid){

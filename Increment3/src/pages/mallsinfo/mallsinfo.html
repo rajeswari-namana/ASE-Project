@@ -2,6 +2,13 @@
 
   <ion-navbar>
     <ion-title>mallsinfo</ion-title>
+
+        <ion-buttons right>
+          <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{mallsData.formatted_address}}">
+      <button ion-button icon-only><ion-icon name="navigate"></ion-icon></button> </a>
+        </ion-buttons>
+
+
   </ion-navbar>
 
 </ion-header>
@@ -11,14 +18,27 @@
 
 
 
+  <div class="photos">
+    <h3>Gallery</h3>
+    <ion-scroll scrollX="true" >
+    <ion-row >
+        <ion-col>
+        <!--<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{hic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw" *ngFor="let hic of pic">
+        -->
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{hic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw" *ngFor="let hic of pic;
+          let i=index " ></ion-col>
+    </ion-row>
+    </ion-scroll>
+  </div>
 
 
-  <ion-item >
-    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{pic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw">
-  </ion-item>
+
 
   <ion-item text-wrap>Address: {{mallsData.formatted_address}}</ion-item>
   <ion-item text-wrap>Mobile No: {{mallsData.formatted_phone_number}}</ion-item>
+
+
+
 
 
 <ion-item>Reviews</ion-item>
