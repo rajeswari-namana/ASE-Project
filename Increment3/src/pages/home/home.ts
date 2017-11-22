@@ -20,8 +20,7 @@ export class HomePage {
     this.movieservice.load().
       then(data => {
       this.traill = data;
-      this.genreinfo=this.traill.genre_ids;
-console.log(this.genreinfo)
+
     });
   }
   viewItem(details){

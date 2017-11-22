@@ -1,6 +1,7 @@
 import { Component ,ViewChild ,ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from "@ionic-native/geolocation";
+import {TheatresinfoPage} from "../theatresinfo/theatresinfo";
 declare var google;
 
 @Component({
@@ -103,6 +104,12 @@ export class TheatresPage {
       map: this.map,
       animation: google.maps.Animation.DROP,
       position: place.geometry.location
+    });
+  }
+
+  viewItem(placeid){
+    this.navCtrl.push(TheatresinfoPage,{
+      theatresinfo: placeid
     });
   }
 

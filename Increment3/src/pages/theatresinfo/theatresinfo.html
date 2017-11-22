@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Theatre Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+
+  <ion-item >
+    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{pic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw">
+  </ion-item>
+  <ion-item text-wrap align-items-center=""><b>{{theatresData.name}}</b></ion-item>
+  <ion-item text-wrap><b>Address: </b>{{theatresData.formatted_address}}</ion-item>
+  <ion-item text-wrap><b>Mobile No: </b>{{theatresData.formatted_phone_number}}</ion-item>
+
+
+  <ion-item><b>Reviews:</b></ion-item>
+
+  <ion-item text-wrap *ngFor="let hel of rev">
+    <p> <p>
+    <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">
+    {{hel.author_name}}
+    <p><ion-icon name="star" *ngFor="let star of getArray(hel.rating)"></ion-icon></p>
+    <p> {{hel.text}}</p></ion-item>
+</ion-content>
