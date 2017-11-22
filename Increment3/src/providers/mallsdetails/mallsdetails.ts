@@ -37,7 +37,7 @@ export class MallsdetailsProvider {
 
   detailedDeals(lat, lon) {
     return new Promise(resolve => {
-      this.http.get("http://api.sqoot.com/v2/deals?api_key=hws8td&location=" + lat + "," + lon + "&category_slugs=electronics,womens-clothing,beauty_health,audio,automotive,automative-services,baby,bars-clubs,beauty_health,bowling,bridal,electronics,facial")
+      this.http.get("http://api.sqoot.com/deals?api_key=hws8td&location="+place )
         .map(res => res.json())
         .subscribe(data => {
 
