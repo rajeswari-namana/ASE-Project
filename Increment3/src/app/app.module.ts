@@ -22,6 +22,9 @@ import { WeatherProvider } from '../providers/weather/weather';
 import {MoviesPage} from "../pages/movies/movies";
 import {MallsinfoPage} from "../pages/mallsinfo/mallsinfo";
 import {MallsdetailsProvider} from "../providers/mallsdetails/mallsdetails";
+import {TheatresinfoPage} from "../pages/theatresinfo/theatresinfo"; //by rajeswari
+import {TheatresdetailsProvider} from "../providers/theatresdetails/theatresdetails"; //by rajeswari
+
 import {AngularFireModule} from "angularfire2";
 import {config} from "./app.firebase.config";
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
@@ -57,7 +60,8 @@ import { Facebook } from '@ionic-native/facebook';
     ForecastPage,
     MallsinfoPage,
     RestaurantMapPage,
-    AccountPage
+    AccountPage,
+    TheatresinfoPage //by rajeswari
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,8 @@ import { Facebook } from '@ionic-native/facebook';
     ForecastPage,
     MallsinfoPage,
     RestaurantMapPage,
-    AccountPage
+    AccountPage,
+    TheatresinfoPage //by rajeswari
   ],
   providers: [
     StatusBar,
@@ -94,6 +99,7 @@ import { Facebook } from '@ionic-native/facebook';
     WeatherProvider,
     GooglePlus,
     MallsdetailsProvider,
+    TheatresdetailsProvider, //by rajeswari
     RestaurantProvider,
     SessionProvider,
     Facebook,
