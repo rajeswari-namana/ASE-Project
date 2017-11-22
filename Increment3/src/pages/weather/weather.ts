@@ -9,6 +9,7 @@ import {MoviesPage} from "../movies/movies";
 import {MallsinfoPage} from "../mallsinfo/mallsinfo";
 import {ForecastPage} from "../forecast/forecast";
 import {TheatresPage} from "../theatres/theatres";
+import {MustseePage} from "../mustsee/mustsee";
 
 
 declare var google;
@@ -73,6 +74,15 @@ export class WeatherPage {
     });
 
   }
+
+  getMust(latitude, longitude) {
+    this.navCtrl.push(MustseePage, {
+      lat: latitude,
+      lon: longitude
+    });
+
+  }
+
 
 
 

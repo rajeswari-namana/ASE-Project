@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MustseePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mustsee</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor="let res of response">
+
+    <div *ngIf="res.venue.photos.count==1">
+
+
+      <button ion-item (click)="viewItem(res.venue.id)">
+        <ion-thumbnail item-start>
+    <img src={{res.venue.photos.groups[0].items[0].prefix}}125x125{{res.venue.photos.groups[0].items[0].suffix}}>
+        </ion-thumbnail>
+    {{res.venue.name}}
+      </button>
+
+
+    </div>
+  </div>
+
+
+</ion-content>>
+
+<!--<p>{{response.items[1].venue.name}}</p>-->
+

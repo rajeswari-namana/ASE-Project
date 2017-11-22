@@ -1,0 +1,36 @@
+<!--
+  Generated template for the MustseeinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>mustseeinfo</ion-title>
+    <ion-buttons right>
+      <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}">
+        <button ion-button icon-only><ion-icon name="navigate"></ion-icon></button> </a>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img align="center" src={{prefix}}400x250{{suffix}}><br><br>
+
+  <b>{{placesData.name}}</b><br><br>
+  <b>Address:</b> {{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}<br><br>
+  <b>Phone</b>  {{contact.formattedPhone}}<br><br>
+  <b>Rating</b>  {{rating}}<br><br>
+  <b>Open now??</b> False<br><br>
+  <b>Open on</b><br><br>
+  <b>Mon</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Tues</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Wed</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Thurs</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Fri</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Sat</b> 5:00 PM – 8:00 PM<br><br>
+  <b>Sun</b> False
+</ion-content>
