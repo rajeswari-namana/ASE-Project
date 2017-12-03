@@ -1,4 +1,4 @@
-webpackJsonp([8],{
+webpackJsonp([11],{
 
 /***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,7 +6,7 @@ webpackJsonp([8],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SessionProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -51,10 +51,79 @@ SessionProvider = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MallsdetailsProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the MallsdetailsProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var MallsdetailsProvider = (function () {
+    function MallsdetailsProvider(http) {
+        this.http = http;
+        console.log('Hello MallsdetailsProvider Provider');
+    }
+    MallsdetailsProvider.prototype.detailedMalls = function (mallsinfo) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=" + mallsinfo + "&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw&callback=initmap")
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data.result);
+            });
+        });
+    };
+    MallsdetailsProvider.prototype.getArray = function (size) {
+        return new Array(size);
+    };
+    MallsdetailsProvider.prototype.detailedDeals = function (lat, lon) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get("http://api.sqoot.com/v2/deals?api_key=hws8td&location=" + lat + "," + lon + "&category_slugs=electronics,womens-clothing,beauty_health,audio,automotive,automative-services,baby,bars-clubs,beauty_health,bowling,bridal,electronics,facial")
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data);
+                console.log(_this.data);
+            });
+        });
+    };
+    return MallsdetailsProvider;
+}());
+MallsdetailsProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+], MallsdetailsProvider);
+
+//# sourceMappingURL=mallsdetails.js.map
+
+/***/ }),
+
+/***/ 130:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -168,14 +237,14 @@ RestaurantProvider = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -221,16 +290,74 @@ MovieDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 152:
+/***/ 153:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DealsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mallsdetails_mallsdetails__ = __webpack_require__(129);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the DealsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DealsPage = (function () {
+    function DealsPage(navCtrl, navParams, deals) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.deals = deals;
+        this.data = {};
+        this.lat = navParams.get('lat');
+        this.lon = navParams.get('lon');
+        this.deals.detailedDeals(this.lat, this.lon)
+            .then(function (data) {
+            _this.data = data;
+            _this.image = _this.data.deals;
+            console.log(_this.image[0].deal.title);
+        });
+    }
+    DealsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DealsPage');
+    };
+    return DealsPage;
+}());
+DealsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-deals',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\deals\deals.html"*/'<!--\n\n  Generated template for the DealsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>deals</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="cards-bg">\n\n<ion-item *ngFor="let de of image">\n\n  <ion-card>\n\n\n\n    <img src={{de.deal.image_url}}>\n\n\n\n    <ion-card-content>\n\n      <h2 text-wrap>\n\n        {{de.deal.title}}\n\n      </h2><br>\n\n      <p>\n\n       {{de.deal.short_title}}\n\n      </p> <br>\n\n      <b>Category:</b> {{de.deal.category_slug}}\n\n    </ion-card-content>\n\n\n\n\n\n  </ion-card><br>\n\n \n\n</ion-item>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\deals\deals.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mallsdetails_mallsdetails__["a" /* MallsdetailsProvider */]])
+], DealsPage);
+
+//# sourceMappingURL=deals.js.map
+
+/***/ }),
+
+/***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_restaurant_restaurant__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__restaurant_map_restaurant_map__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_restaurant_restaurant__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__restaurant_map_restaurant_map__ = __webpack_require__(155);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -370,7 +497,7 @@ __decorate([
 ], RestaurantInfoPage.prototype, "mapElement", void 0);
 RestaurantInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-restaurant-info',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurant-info/restaurant-info.html"*/'<!--\n  Generated template for the RestaurantInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Restaurant Info</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding class="card-background">\n     \n  \n    <ion-card>\n      <ion-card-header id="card-header" >{{restaurantInfo.name}}</ion-card-header>\n      <ion-card-content>\n        <div>\n            <div><b>Cusine: </b>{{restaurantInfo.cuisines}}</div>\n            <div><b>Address: </b>{{restaurantInfo.location.address}}</div>\n            <div><b>Avg Cost: </b>{{restaurantInfo.average_cost_for_two}} {{restaurantInfo.currency}}</div>      \n            <div><b>User Rating: </b>{{restaurantInfo.user_rating.aggregate_rating}} {{restaurantInfo.user_rating.rating_text}}</div>\n            <div><b>Online Delivery: </b>{{restaurantInfo.has_online_delivery}}</div>    \n        </div>\n      </ion-card-content>\n    </ion-card>\n    \n    <ion-card class="abc">\n        <button #map id="map" (click)= "loadMap(restaurantInfo.location.latitude,restaurantInfo.location.longitude)"></button>\n      </ion-card>\n    \n        \n        <!-- <div>User reviews coming soon...</div> -->\n        <ion-card>\n        <button  class="review-button" ion-button full (click)="loadRestoReview(restaurantInfo.id)"><b>Review</b></button>\n      \n    <ion-list >\n        <button ion-item *ngFor="let revieww of reviewInfo" class="reviews">\n           <p style="color:black"> <b>Name:</b> {{revieww.review.user.name}}</p>\n           <p style="color:black"> <b>Rating:</b> {{revieww.review.rating}}</p>\n           <p style="color:black"> <b>Review Text:</b> {{revieww.review.review_text}}</p> \n         </button> \n      </ion-list>\n  </ion-card>\n  \n  </ion-content>\n  '/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurant-info/restaurant-info.html"*/,
+        selector: 'page-restaurant-info',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurant-info\restaurant-info.html"*/'<!--\n\n  Generated template for the RestaurantInfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  \n\n    <ion-navbar>\n\n      <ion-title>Restaurant Info</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding class="card-background">\n\n     \n\n  \n\n    <ion-card>\n\n      <ion-card-header id="card-header" >{{restaurantInfo.name}}</ion-card-header>\n\n      <ion-card-content>\n\n        <div>\n\n            <div><b>Cusine: </b>{{restaurantInfo.cuisines}}</div>\n\n            <div><b>Address: </b>{{restaurantInfo.location.address}}</div>\n\n            <div><b>Avg Cost: </b>{{restaurantInfo.average_cost_for_two}} {{restaurantInfo.currency}}</div>      \n\n            <div><b>User Rating: </b>{{restaurantInfo.user_rating.aggregate_rating}} {{restaurantInfo.user_rating.rating_text}}</div>\n\n            <div><b>Online Delivery: </b>{{restaurantInfo.has_online_delivery}}</div>    \n\n        </div>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    \n\n    <ion-card class="abc">\n\n        <button #map id="map" (click)= "loadMap(restaurantInfo.location.latitude,restaurantInfo.location.longitude)"></button>\n\n      </ion-card>\n\n    \n\n        \n\n        <!-- <div>User reviews coming soon...</div> -->\n\n        <ion-card>\n\n        <button  class="review-button" ion-button full (click)="loadRestoReview(restaurantInfo.id)"><b>Review</b></button>\n\n      \n\n    <ion-list >\n\n        <button ion-item *ngFor="let revieww of reviewInfo" class="reviews">\n\n           <p style="color:black"> <b>Name:</b> {{revieww.review.user.name}}</p>\n\n           <p style="color:black"> <b>Rating:</b> {{revieww.review.rating}}</p>\n\n           <p style="color:black"> <b>Review Text:</b> {{revieww.review.review_text}}</p> \n\n         </button> \n\n      </ion-list>\n\n  </ion-card>\n\n  \n\n  </ion-content>\n\n  '/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurant-info\restaurant-info.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_restaurant_restaurant__["a" /* RestaurantProvider */]])
 ], RestaurantInfoPage);
@@ -379,13 +506,13 @@ RestaurantInfoPage = __decorate([
 
 /***/ }),
 
-/***/ 153:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantMapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -469,7 +596,7 @@ __decorate([
 ], RestaurantMapPage.prototype, "mapElement", void 0);
 RestaurantMapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-restaurant-map',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurant-map/restaurant-map.html"*/'<!--\n  Generated template for the RestaurantMapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n      <ion-title>RestaurantMap</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n      <div>\n          <strong>Mode of Travel: </strong>\n          <select [(ngModel)]="mode" id="mode" ng-change="calculateAndDisplayRoute(mode.value)">\n            <option value="DRIVING">Driving</option>\n            <option value="WALKING">Walking</option>\n            <option value="BICYCLING">Bicycling</option>\n            <option value="TRANSIT">Transit</option>\n          </select>\n          </div>\n      <div #map id="map"></div>\n  </ion-content>\n  '/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurant-map/restaurant-map.html"*/,
+        selector: 'page-restaurant-map',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurant-map\restaurant-map.html"*/'<!--\n\n  Generated template for the RestaurantMapPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  \n\n    <ion-navbar>\n\n      <ion-title>RestaurantMap</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content>\n\n      <div>\n\n          <strong>Mode of Travel: </strong>\n\n          <select [(ngModel)]="mode" id="mode" ng-change="calculateAndDisplayRoute(mode.value)">\n\n            <option value="DRIVING">Driving</option>\n\n            <option value="WALKING">Walking</option>\n\n            <option value="BICYCLING">Bicycling</option>\n\n            <option value="TRANSIT">Transit</option>\n\n          </select>\n\n          </div>\n\n      <div #map id="map"></div>\n\n  </ion-content>\n\n  '/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurant-map\restaurant-map.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], RestaurantMapPage);
@@ -478,7 +605,7 @@ RestaurantMapPage = __decorate([
 
 /***/ }),
 
-/***/ 162:
+/***/ 164:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -491,44 +618,56 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 162;
+webpackEmptyAsyncContext.id = 164;
 
 /***/ }),
 
-/***/ 205:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about/about.module": [
-		468,
-		7
+		474,
+		10
 	],
 	"../pages/account/account.module": [
-		469,
+		475,
+		9
+	],
+	"../pages/deals/deals.module": [
+		476,
+		8
+	],
+	"../pages/mustsee/mustsee.module": [
+		477,
+		7
+	],
+	"../pages/mustseeinfo/mustseeinfo.module": [
+		478,
 		6
 	],
 	"../pages/register/register.module": [
-		470,
+		479,
 		1
 	],
 	"../pages/restaurant-info/restaurant-info.module": [
-		471,
+		480,
 		5
 	],
 	"../pages/restaurant-map/restaurant-map.module": [
-		472,
+		481,
 		4
 	],
 	"../pages/restaurants/restaurants.module": [
-		475,
+		482,
 		3
 	],
 	"../pages/tabs/tabs.module": [
-		473,
+		483,
 		0
 	],
 	"../pages/weather/weather.module": [
-		474,
+		484,
 		2
 	]
 };
@@ -543,18 +682,84 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 205;
+webpackAsyncContext.id = 207;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 250:
+/***/ 252:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MustseeProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the MustseeProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var MustseeProvider = (function () {
+    function MustseeProvider(http) {
+        this.http = http;
+        console.log('Hello MustseeProvider Provider');
+    }
+    MustseeProvider.prototype.mustSeePlaces = function (latitude, longitude) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get("https://api.foursquare.com/v2/venues/explore?client_id=IP2D3AJWFIVOXSYINLDIH1ODS4J2ETUUGK5VGWUUZSEZXOFM&client_secret=IEN4ZFCAGNTYWDPQ0GIOUFKG0BGSOP4FLVD1B4NPNANDVHYI&v=20160215&limit=50&near=" + latitude + "," + longitude + "&categoryId=4d4b7104d754a06370d81259,4bf58dd8d48988d181941735,507c8c4091d498d9fc8c67a9,4bf58dd8d48988d182941735,4bf58dd8d48988d193941735,4d4b7105d754a06373d81259,4bf58dd8d48988d165941735&venuePhotos=1")
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data);
+                //console.log(data);
+            });
+        });
+    };
+    MustseeProvider.prototype.detailedmustseeplaces = function (venueid) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get("https://api.foursquare.com/v2/venues/" + venueid + "?client_id=IP2D3AJWFIVOXSYINLDIH1ODS4J2ETUUGK5VGWUUZSEZXOFM&client_secret=IEN4ZFCAGNTYWDPQ0GIOUFKG0BGSOP4FLVD1B4NPNANDVHYI&v=20160215")
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data);
+            });
+        });
+    };
+    return MustseeProvider;
+}());
+MustseeProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+], MustseeProvider);
+
+//# sourceMappingURL=mustsee.js.map
+
+/***/ }),
+
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForecastPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -607,7 +812,7 @@ var ForecastPage = (function () {
 }());
 ForecastPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-forecast',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/forecast/forecast.html"*/'\n<ion-header>\n\n  <ion-navbar color="dark">\n    <ion-title>Forecast</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <!-- <ion-grid>\n    <ion-row>\n      <ion-col col-8>\n        <h3>{{forecastday1.title}}</h3></ion-col>\n      <ion-col>\n        <img src="{{forecastday1.icon_url}}" alt=""></ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>{{forecastday1.fcttext}}</ion-col>\n\n\n    </ion-row><br><br>\n    <ion-row>\n      <ion-col col-8>\n        <h3>{{forecastday2.title}}</h3></ion-col>\n      <ion-col>\n        <img src="{{forecastday2.icon_url}}" alt=""></ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>{{forecastday2.fcttext}}</ion-col>\n\n\n    </ion-row>\n    </ion-grid>-->\n  <ion-grid>\n    <ion-item>\n    <ion-row>\n      <ion-col><b>Time</b></ion-col>\n\n      <ion-col><b>Condition</b></ion-col>\n    </ion-row>\n    </ion-item>\n\n  <ion-item *ngFor="let time of timely">\n  <ion-row>\n    <ion-col >{{this.time.FCTTIME.civil}}</ion-col>\n  <ion-col col-2><img src="{{this.time.icon_url}}" alt=""> </ion-col>\n    <ion-col>{{this.time.condition}}</ion-col>\n  </ion-row>\n  </ion-item>\n\n  </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/forecast/forecast.html"*/,
+        selector: 'page-forecast',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\forecast\forecast.html"*/'\n<ion-header>\n\n  <ion-navbar color="dark">\n    <ion-title>Forecast</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <!-- <ion-grid>\n    <ion-row>\n      <ion-col col-8>\n        <h3>{{forecastday1.title}}</h3></ion-col>\n      <ion-col>\n        <img src="{{forecastday1.icon_url}}" alt=""></ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>{{forecastday1.fcttext}}</ion-col>\n\n\n    </ion-row><br><br>\n    <ion-row>\n      <ion-col col-8>\n        <h3>{{forecastday2.title}}</h3></ion-col>\n      <ion-col>\n        <img src="{{forecastday2.icon_url}}" alt=""></ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>{{forecastday2.fcttext}}</ion-col>\n\n\n    </ion-row>\n    </ion-grid>-->\n  <ion-grid>\n    <ion-item>\n    <ion-row>\n      <ion-col><b>Time</b></ion-col>\n\n      <ion-col><b>Condition</b></ion-col>\n    </ion-row>\n    </ion-item>\n\n  <ion-item *ngFor="let time of timely">\n  <ion-row>\n    <ion-col >{{this.time.FCTTIME.civil}}</ion-col>\n  <ion-col col-2><img src="{{this.time.icon_url}}" alt=""> </ion-col>\n    <ion-col>{{this.time.condition}}</ion-col>\n  </ion-row>\n  </ion-item>\n\n  </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\forecast\forecast.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */]])
 ], ForecastPage);
@@ -616,15 +821,15 @@ ForecastPage = __decorate([
 
 /***/ }),
 
-/***/ 251:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_movie_data_movie_data__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_details__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_movie_data_movie_data__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_details__ = __webpack_require__(255);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -661,7 +866,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title align="center">GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n<h3 align="center">Movies Playing Around</h3>\n    <ion-list>\n    <ion-item *ngFor="let details of traill">\n\n      <ion-card>\n        <img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}">\n        <div class="card-title">{{details.title}}</div>\n\n        <div class="card-subtitle"><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</div>\n        <button ion-button clear item-right (click)="viewItem(details)">View</button>\n      </ion-card>\n\n     </ion-item>\n  </ion-list>\n</ion-content>\n\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/home/home.html"*/,
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title align="center">GetOnWheels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n<h3 align="center">Movies Playing Around</h3>\n\n    <ion-list>\n\n    <ion-item *ngFor="let details of traill">\n\n\n\n      <ion-card>\n\n        <img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}">\n\n        <div class="card-title">{{details.title}}</div>\n\n        <div class="card-subtitle">\n\n\n\n          <ion-col><ion-icon name="md-heart" class="ion-md-heart" item-left=""></ion-icon>{{details.popularity}}</ion-col>\n\n          <ion-col><ion-icon *ngIf="details.adult==false">U</ion-icon></ion-col></div>\n\n\n\n\n\n          <ion-row *ngFor="let det of details.genre_ids">\n\n            <ion-col ion-button small color="light" *ngIf="det ==28">Action</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==18">Drama</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==12">Adventure</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==16">Animation</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==35">Comedy</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==80">Crime</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==99">Documentary</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==10751">Family</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==14">Fantasy</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==36">History</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==27">Horror</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==10402">Music</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==9648">Mystery</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==10749">Romance</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==878">Science Fiction</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==10770">TV Movie</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==53">Thriller</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==10752">War</ion-col>\n\n            <ion-col ion-button small color="light" *ngIf="det ==37">Western</ion-col>\n\n\n\n\n\n        </ion-row>\n\n        <div>\n\n        <button ion-button clear item-right (click)="viewItem(details)">View</button>\n\n        </div>\n\n      </ion-card>\n\n\n\n     </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\home\home.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_1__providers_movie_data_movie_data__["a" /* MovieDataProvider */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_movie_data_movie_data__["a" /* MovieDataProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */]])
@@ -671,13 +876,16 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 252:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -689,33 +897,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var DetailsPage = (function () {
-    function DetailsPage(navCtrl, params) {
+    function DetailsPage(navCtrl, params, http) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.params = params;
+        this.http = http;
         this.details = params.get('details');
+        console.log(this.details.id);
+        //openWebpage(url: string){
+        //  const browser = this.inAppBrowser.create(url,'_self');
+        // }
+        this.http.get('http://api.themoviedb.org/3/movie/' + this.details.id + '/videos?api_key=1dd53393337c4051b0c109c18e659e56')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data1) {
+            // we've got back the raw data, now generate the core schedule data
+            // and save the data for later reference
+            _this.data1 = data1.results[0].key;
+            console.log(_this.data1);
+            _this.link = "https://www.youtube.com/embed/" + _this.data1;
+        });
+        this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=1dd53393337c4051b0c109c18e659e56&language=en-US')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data2) {
+            // we've got back the raw data, now generate the core schedule data
+            // and save the data for later reference
+            _this.data2 = data2.genres;
+            console.log(_this.data2);
+        });
     }
     return DetailsPage;
 }());
 DetailsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-details',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/details/details.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title align="center">GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <h3 align="center">{{details.title}}</h3>\n  <ion-card>\n    <ion-card-header><img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}"></ion-card-header>\n    <ion-card-content>\n      <ion-card-title><b>Popularity: </b></ion-card-title>{{details.popularity}}\n      <ion-card-title><b>Release Date: </b></ion-card-title>{{details.release_date}}\n      <ion-card-title><b>Overview: </b></ion-card-title>{{details.overview}}\n      </ion-card-content>\n  </ion-card>\n</ion-content>\n\n\n\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/details/details.html"*/
+        selector: 'page-details',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\details\details.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title align="center">GetOnWheels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <h3 align="center">{{details.title}}</h3>\n\n  <ion-card>\n\n    <ion-card-header><img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}"></ion-card-header>\n\n    <ion-card-content>\n\n      <ion-card-title><b>Popularity: </b></ion-card-title>{{details.popularity}}\n\n      <ion-card-title><b>Release Date: </b></ion-card-title>{{details.release_date}}\n\n      <ion-card-title><b>Overview: </b></ion-card-title>{{details.overview}}\n\n      <ion-card-header><a href="{{link}}" target=\'myIframe\' >WATCH TRAILER</a></ion-card-header>\n\n      <iframe width="310" height="315" name=\'myIframe\' frameborder="0"></iframe>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\details\details.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
 ], DetailsPage);
 
 //# sourceMappingURL=details.js.map
 
 /***/ }),
 
-/***/ 253:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TheatresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theatresinfo_theatresinfo__ = __webpack_require__(257);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -725,6 +959,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -806,6 +1041,11 @@ var TheatresPage = (function () {
             position: place.geometry.location
         });
     };
+    TheatresPage.prototype.viewItem = function (placeid) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__theatresinfo_theatresinfo__["a" /* TheatresinfoPage */], {
+            theatresinfo: placeid
+        });
+    };
     return TheatresPage;
 }());
 __decorate([
@@ -814,7 +1054,7 @@ __decorate([
 ], TheatresPage.prototype, "mapElement", void 0);
 TheatresPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-theatres',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/theatres/theatres.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>GetOnWheels</ion-title>\n    <ion-buttons end>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h3 align="center">Movie Theatres Around</h3>\n\n  <div #map id="map" ></div>\n  <div style="width : 100% ;height: 60%">\n        <ion-list>\n      <ion-item *ngFor="let place of places">\n        <h4>{{place.name}}</h4>\n        </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n\n\n\n\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/theatres/theatres.html"*/
+        selector: 'page-theatres',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\theatres\theatres.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title>GetOnWheels</ion-title>\n\n    <ion-buttons end>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <h3 align="center">Movie Theatres Around</h3>\n\n\n\n  <div #map id="map" ></div>\n\n  <div style="width : 100% ;height: 60%">\n\n        <ion-list>\n\n      <ion-item *ngFor="let place of places">\n\n        <h4>{{place.name}}</h4>\n\n\n\n        <button ion-button clear item-end (click)="viewItem(place.place_id)"><ion-icon name="star"></ion-icon>View</button>\n\n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\theatres\theatres.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]])
 ], TheatresPage);
@@ -823,14 +1063,14 @@ TheatresPage = __decorate([
 
 /***/ }),
 
-/***/ 254:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MallsinfoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TheatresinfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mallsdetails_mallsdetails__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_theatresdetails_theatresdetails__ = __webpack_require__(258);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -849,47 +1089,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var MallsinfoPage = (function () {
-    function MallsinfoPage(navCtrl, navParams, malls) {
+var TheatresinfoPage = (function () {
+    function TheatresinfoPage(navCtrl, navParams, malls) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.malls = malls;
-        this.mallsData = {};
+        this.theatresData = {};
         this.pic = {};
-        this.mallsinfo = navParams.get('mallsinfo');
-        this.malls.detailedMalls(this.mallsinfo)
+        this.theatresinfo = navParams.get('theatresinfo');
+        this.malls.detailedMalls(this.theatresinfo)
             .then(function (data) {
-            _this.mallsData = data;
-            _this.pic = _this.mallsData.photos[0];
-            _this.rev = _this.mallsData.reviews;
-            console.log(_this.mallsData.rating);
+            _this.theatresData = data;
+            _this.pic = _this.theatresData.photos[0];
+            _this.rev = _this.theatresData.reviews;
+            console.log(_this.theatresData.rating);
         });
     }
-    MallsinfoPage.prototype.getArray = function (size) {
+    TheatresinfoPage.prototype.getArray = function (size) {
         return new Array(size);
     };
-    return MallsinfoPage;
+    return TheatresinfoPage;
 }());
-MallsinfoPage = __decorate([
+TheatresinfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mallsinfo',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/mallsinfo/mallsinfo.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>mallsinfo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n\n\n\n  <ion-item >\n    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{pic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw">\n  </ion-item>\n\n  <ion-item text-wrap>Address: {{mallsData.formatted_address}}</ion-item>\n  <ion-item text-wrap>Mobile No: {{mallsData.formatted_phone_number}}</ion-item>\n\n\n<ion-item>Reviews</ion-item>\n\n  <ion-item text-wrap *ngFor="let hel of rev">\n    <p> <p>\n    <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">\n     {{hel.author_name}}\n    <p><ion-icon name="star" *ngFor="let star of getArray(hel.rating)"></ion-icon></p>\n   <p> {{hel.text}}</p></ion-item>\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/mallsinfo/mallsinfo.html"*/,
+        selector: 'page-theatresinfo',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\theatresinfo\theatresinfo.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="dark">\n\n    <ion-title>Theatre Info</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n\n\n\n\n\n\n  <ion-item >\n\n    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{pic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw">\n\n  </ion-item>\n\n  <ion-item text-wrap align-items-center=""><b>{{theatresData.name}}</b></ion-item>\n\n  <ion-item text-wrap><b>Address: </b>{{theatresData.formatted_address}}</ion-item>\n\n  <ion-item text-wrap><b>Mobile No: </b>{{theatresData.formatted_phone_number}}</ion-item>\n\n\n\n\n\n  <ion-item><b>Reviews:</b></ion-item>\n\n\n\n  <ion-item text-wrap *ngFor="let hel of rev">\n\n    <p> <p>\n\n    <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">\n\n    {{hel.author_name}}\n\n    <p><ion-icon name="star" *ngFor="let star of getArray(hel.rating)"></ion-icon></p>\n\n    <p> {{hel.text}}</p></ion-item>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\theatresinfo\theatresinfo.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mallsdetails_mallsdetails__["a" /* MallsdetailsProvider */]])
-], MallsinfoPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_theatresdetails_theatresdetails__["a" /* TheatresdetailsProvider */]])
+], TheatresinfoPage);
 
-//# sourceMappingURL=mallsinfo.js.map
+//# sourceMappingURL=theatresinfo.js.map
 
 /***/ }),
 
-/***/ 255:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MallsdetailsProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TheatresdetailsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -904,20 +1144,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the MallsdetailsProvider provider.
+ Generated class for the MallsdetailsProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var MallsdetailsProvider = (function () {
-    function MallsdetailsProvider(http) {
+ See https://angular.io/guide/dependency-injection for more info on providers
+ and Angular DI.
+ */
+var TheatresdetailsProvider = (function () {
+    function TheatresdetailsProvider(http) {
         this.http = http;
-        console.log('Hello MallsdetailsProvider Provider');
+        console.log('Hello TheatresdetailsProvider Provider');
     }
-    MallsdetailsProvider.prototype.detailedMalls = function (mallsinfo) {
+    TheatresdetailsProvider.prototype.detailedMalls = function (theatresinfo) {
         var _this = this;
         return new Promise(function (resolve) {
-            _this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=" + mallsinfo + "&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw&callback=initmap")
+            _this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=" + theatresinfo + "&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw&callback=initmap")
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 _this.data = data;
@@ -925,27 +1165,102 @@ var MallsdetailsProvider = (function () {
             });
         });
     };
-    MallsdetailsProvider.prototype.getArray = function (size) {
+    TheatresdetailsProvider.prototype.getArray = function (size) {
         return new Array(size);
     };
-    return MallsdetailsProvider;
+    return TheatresdetailsProvider;
 }());
-MallsdetailsProvider = __decorate([
+TheatresdetailsProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], MallsdetailsProvider);
+], TheatresdetailsProvider);
 
-//# sourceMappingURL=mallsdetails.js.map
+//# sourceMappingURL=theatresdetails.js.map
 
 /***/ }),
 
-/***/ 297:
+/***/ 259:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MallsinfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mallsdetails_mallsdetails__ = __webpack_require__(129);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MallsinfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MallsinfoPage = (function () {
+    function MallsinfoPage(navCtrl, navParams, malls, geolocation) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.malls = malls;
+        this.geolocation = geolocation;
+        this.mallsData = {};
+        this.mallsinfo = navParams.get('mallsinfo');
+        this.malls.detailedMalls(this.mallsinfo)
+            .then(function (data) {
+            _this.mallsData = data;
+            _this.pic = _this.mallsData.photos;
+            _this.rev = _this.mallsData.reviews;
+        });
+    }
+    MallsinfoPage.prototype.getUserPosition = function () {
+        var _this = this;
+        this.options = {
+            enableHighAccuracy: true
+        };
+        this.geolocation.getCurrentPosition(this.options).then(function (pos) {
+            _this.currentLat = pos.coords.latitude;
+            _this.currentLong = pos.coords.longitude;
+        }, function (err) {
+            console.log("error : " + err.message);
+        });
+    };
+    MallsinfoPage.prototype.ionViewDidEnter = function () {
+        this.getUserPosition();
+    };
+    MallsinfoPage.prototype.getArray = function (size) {
+        return new Array(size);
+    };
+    return MallsinfoPage;
+}());
+MallsinfoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-mallsinfo',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mallsinfo\mallsinfo.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>mallsinfo</ion-title>\n\n\n\n        <ion-buttons right>\n\n          <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{mallsData.formatted_address}}">\n\n      <button ion-button icon-only><ion-icon name="navigate"></ion-icon></button> </a>\n\n        </ion-buttons>\n\n\n\n\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n\n\n  <div class="photos">\n\n    <h3>Gallery</h3>\n\n    <ion-scroll scrollX="true" >\n\n    <ion-row >\n\n        <ion-col>\n\n        <!--<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{hic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw" *ngFor="let hic of pic">\n\n        -->\n\n          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{hic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw" *ngFor="let hic of pic;\n\n          let i=index " ></ion-col>\n\n    </ion-row>\n\n    </ion-scroll>\n\n  </div>\n\n\n\n\n\n\n\n\n\n  <ion-item text-wrap>Address: {{mallsData.formatted_address}}</ion-item>\n\n  <ion-item text-wrap>Mobile No: {{mallsData.formatted_phone_number}}</ion-item>\n\n\n\n\n\n\n\n\n\n\n\n<ion-item>Reviews</ion-item>\n\n\n\n  <ion-item text-wrap *ngFor="let hel of rev">\n\n    <p> <p>\n\n    <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">\n\n     {{hel.author_name}}\n\n    <p><ion-icon name="star" *ngFor="let star of getArray(hel.rating)"></ion-icon></p>\n\n   <p> {{hel.text}}</p></ion-item>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mallsinfo\mallsinfo.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mallsdetails_mallsdetails__["a" /* MallsdetailsProvider */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]])
+], MallsinfoPage);
+
+//# sourceMappingURL=mallsinfo.js.map
+
+/***/ }),
+
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_session_session__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(128);
@@ -1005,7 +1320,7 @@ var AccountPage = (function () {
 }());
 AccountPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-account',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/account/account.html"*/'<!--\n  Generated template for the AccountPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Account</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n<ion-content padding>\n  <ion-card>\n      <!-- <div>User reviews coming soon...</div> -->\n      <button ion-button full (click)="logoutAll()" tabIcon="md-log-out">LogOut</button>\n  </ion-card>\n  </ion-content>\n  '/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/account/account.html"*/,
+        selector: 'page-account',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\account\account.html"*/'<!--\n\n  Generated template for the AccountPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  \n\n    <ion-navbar>\n\n      <ion-title>Account</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n<ion-content padding>\n\n  <ion-card>\n\n      <!-- <div>User reviews coming soon...</div> -->\n\n      <button ion-button full (click)="logoutAll()" tabIcon="md-log-out">LogOut</button>\n\n  </ion-card>\n\n  </ion-content>\n\n  '/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\account\account.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular_components_app_app__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_3__providers_session_session__["a" /* SessionProvider */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */]])
@@ -1015,102 +1330,16 @@ AccountPage = __decorate([
 
 /***/ }),
 
-/***/ 298:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeatherPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_weather_weather__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__forecast_forecast__ = __webpack_require__(250);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var WeatherPage = (function () {
-    function WeatherPage(afAuth, toast, navCtrl, geolocation, weather, navParams) {
-        this.afAuth = afAuth;
-        this.toast = toast;
-        this.navCtrl = navCtrl;
-        this.geolocation = geolocation;
-        this.weather = weather;
-        this.navParams = navParams;
-        this.weatherData = {};
-        this.trail = {};
-        this.full_address = {};
-    }
-    WeatherPage.prototype.getUserPosition = function () {
-        var _this = this;
-        this.options = {
-            enableHighAccuracy: true
-        };
-        this.geolocation.getCurrentPosition(this.options).then(function (pos) {
-            _this.currentPos = pos;
-            console.log(pos);
-            _this.getWeather(pos.coords.latitude, pos.coords.longitude);
-        }, function (err) {
-            console.log("error : " + err.message);
-        });
-    };
-    WeatherPage.prototype.ionViewDidEnter = function () {
-        this.getUserPosition();
-    };
-    WeatherPage.prototype.getWeather = function (latitude, longitude) {
-        var _this = this;
-        this.weather.weatherForLocation(latitude, longitude)
-            .then(function (data) {
-            _this.weatherData = data;
-            _this.trail = _this.weatherData.display_location;
-            _this.full_address = _this.weatherData.observation_location;
-        });
-    };
-    WeatherPage.prototype.getForecast = function (latitude, longitude) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__forecast_forecast__["a" /* ForecastPage */], {
-            lat: latitude,
-            lon: longitude
-        });
-    };
-    return WeatherPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
-], WeatherPage.prototype, "mapElement", void 0);
-WeatherPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-weather',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/weather/weather.html"*/'<ion-header>\n  <ion-navbar align="center" color="dark">\n    <ion-title>GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="background">\n\n  <div style="width : 100% ;height: 100%">\n    <ion-grid *ngIf="weather">\n      <ion-row>\n        <ion-col align="center">\n          <h3 class="location">{{trail.full}}</h3>\n          <div class="icon"><img src="{{weatherData.icon_url}}" alt=""></div>\n          <h3 class="desc">{{weatherData.weather}}</h3>\n          <h1 class="temp">{{weatherData.temp_f}}&deg;</h1>\n        </ion-col>\n      </ion-row>\n\n\n\n      <ion-card>\n        <ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <ion-list>\n          <ion-item>\n            <strong>Location:</strong> {{full_address.full}}\n          </ion-item>\n          <ion-item>\n            <strong>Temp: </strong> {{weatherData.temperature_string}}\n          </ion-item>\n          <ion-item>\n            <strong>Relative Humidity: </strong> {{weatherData.relative_humidity}}\n          </ion-item>\n          <ion-item>\n            <strong>Dewpoint: </strong> {{weatherData.dewpoint_string}}\n          </ion-item>\n          <ion-item>\n            <strong>Visibility: </strong> {{weatherData.visibility_mi}}\n          </ion-item>\n          <ion-item>\n            <strong>Ultra Violet: </strong> {{weatherData.UV}}\n          </ion-item>\n          <button ion-button block outline color="light" (click)="getForecast(trail.latitude,trail.longitude)">How is today?</button>\n\n        </ion-list>\n      </ion-col>\n    </ion-row>\n        </ion-card-content>\n      </ion-card>\n\n    </ion-grid>\n\n\n       <!--<ion-row>\n         <ion-col>\n\n          <p>{{weatherData.UV}}</p>\n           <p>{{trail.full}}</p>\n         </ion-col>\n       </ion-row>-->\n\n  </div>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/weather/weather.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_3__providers_weather_weather__["a" /* WeatherProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], WeatherPage);
-
-//# sourceMappingURL=weather.js.map
-
-/***/ }),
-
-/***/ 299:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_restaurant_restaurant__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__restaurant_info_restaurant_info__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_restaurant_restaurant__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__restaurant_info_restaurant_info__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1212,7 +1441,7 @@ var RestaurantsPage = (function () {
 }());
 RestaurantsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-restaurants',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurants/restaurants.html"*/'<!--\n  Generated template for the RestaurantsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Restaurants Near Me</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding class="card-background">\n      <ion-item>\n          <ion-input type="search" [(ngModel)]="searchInput"  placeholder="Enter Cuisine" (input)=\'onInputChange($event.target.value)\'></ion-input>\n          <button class="filter-size" item-end ion-button icon-only (click)="filterData(searchInput)" ><ion-icon name="funnel"></ion-icon></button>\n      </ion-item>\n  \n      <!-- <ion-item>\n          <ion-input type="search" [(ngModel)]="searchInput"  placeholder="Enter Filter" (input)=\'onInputChange($event.target.value)\'></ion-input>\n          <ion-icon name="funnel" (click)="filterData(searchInput)" item-end></ion-icon>\n      </ion-item> -->\n  \n      <ion-list>\n        <button ion-item *ngFor="let resto of restaurantInfo" (click)="viewRestaurantInfo(resto.restaurant.id)" >\n            <ion-thumbnail item-start>\n                <img src={{resto.imageURL}} height="40" width="40">\n              <!-- <img src="../../assets/image.jpg" height="300" width="360">  -->\n            </ion-thumbnail>\n            <h2>{{resto.restaurant.name}}</h2>\n          <p>{{resto.restaurant.cuisines}}</p>\n          <p>Address: {{resto.restaurant.location.address}}</p>\n          <p>Avg Cost: {{resto.restaurant.average_cost_for_two}}  {{resto.restaurant.currency}}</p>\n          <p>User Rating: {{resto.restaurant.user_rating.aggregate_rating}}</p>\n      \n        </button>\n      </ion-list>\n  </ion-content>\n  '/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/restaurants/restaurants.html"*/,
+        selector: 'page-restaurants',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurants\restaurants.html"*/'<!--\n\n  Generated template for the RestaurantsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  \n\n    <ion-navbar>\n\n      <ion-title>Restaurants Near Me</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding class="card-background">\n\n      <ion-item>\n\n          <ion-input type="search" [(ngModel)]="searchInput"  placeholder="Enter Cuisine" (input)=\'onInputChange($event.target.value)\'></ion-input>\n\n          <button class="filter-size" item-end ion-button icon-only (click)="filterData(searchInput)" ><ion-icon name="funnel"></ion-icon></button>\n\n      </ion-item>\n\n  \n\n      <!-- <ion-item>\n\n          <ion-input type="search" [(ngModel)]="searchInput"  placeholder="Enter Filter" (input)=\'onInputChange($event.target.value)\'></ion-input>\n\n          <ion-icon name="funnel" (click)="filterData(searchInput)" item-end></ion-icon>\n\n      </ion-item> -->\n\n  \n\n      <ion-list>\n\n        <button ion-item *ngFor="let resto of restaurantInfo" (click)="viewRestaurantInfo(resto.restaurant.id)" >\n\n            <ion-thumbnail item-start>\n\n                <img src={{resto.imageURL}} height="40" width="40">\n\n              <!-- <img src="../../assets/image.jpg" height="300" width="360">  -->\n\n            </ion-thumbnail>\n\n            <h2>{{resto.restaurant.name}}</h2>\n\n          <p>{{resto.restaurant.cuisines}}</p>\n\n          <p>Address: {{resto.restaurant.location.address}}</p>\n\n          <p>Avg Cost: {{resto.restaurant.average_cost_for_two}}  {{resto.restaurant.currency}}</p>\n\n          <p>User Rating: {{resto.restaurant.user_rating.aggregate_rating}}</p>\n\n      \n\n        </button>\n\n      </ion-list>\n\n  </ion-content>\n\n  '/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\restaurants\restaurants.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_3__providers_restaurant_restaurant__["a" /* RestaurantProvider */]])
@@ -1222,15 +1451,265 @@ RestaurantsPage = __decorate([
 
 /***/ }),
 
-/***/ 300:
+/***/ 303:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeatherPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_weather_weather__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__forecast_forecast__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mustsee_mustsee__ = __webpack_require__(304);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var WeatherPage = (function () {
+    function WeatherPage(afAuth, toast, navCtrl, geolocation, weather, navParams) {
+        this.afAuth = afAuth;
+        this.toast = toast;
+        this.navCtrl = navCtrl;
+        this.geolocation = geolocation;
+        this.weather = weather;
+        this.navParams = navParams;
+        this.weatherData = {};
+        this.trail = {};
+        this.full_address = {};
+    }
+    WeatherPage.prototype.getUserPosition = function () {
+        var _this = this;
+        this.options = {
+            enableHighAccuracy: true
+        };
+        this.geolocation.getCurrentPosition(this.options).then(function (pos) {
+            _this.currentPos = pos;
+            console.log(pos);
+            _this.getWeather(pos.coords.latitude, pos.coords.longitude);
+        }, function (err) {
+            console.log("error : " + err.message);
+        });
+    };
+    WeatherPage.prototype.ionViewDidEnter = function () {
+        this.getUserPosition();
+    };
+    WeatherPage.prototype.getWeather = function (latitude, longitude) {
+        var _this = this;
+        this.weather.weatherForLocation(latitude, longitude)
+            .then(function (data) {
+            _this.weatherData = data;
+            _this.trail = _this.weatherData.display_location;
+            _this.full_address = _this.weatherData.observation_location;
+        });
+    };
+    WeatherPage.prototype.getForecast = function (latitude, longitude) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__forecast_forecast__["a" /* ForecastPage */], {
+            lat: latitude,
+            lon: longitude
+        });
+    };
+    WeatherPage.prototype.getMust = function (latitude, longitude) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__mustsee_mustsee__["a" /* MustseePage */], {
+            lat: latitude,
+            lon: longitude
+        });
+    };
+    return WeatherPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('map'),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+], WeatherPage.prototype, "mapElement", void 0);
+WeatherPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-weather',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\weather\weather.html"*/'<ion-header>\n  <ion-navbar align="center" color="dark">\n    <ion-title>GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="background">\n\n  <div style="width : 100% ;height: 100%">\n    <ion-grid *ngIf="weather">\n      <ion-row>\n        <ion-col align="center">\n          <h3 class="location">{{trail.full}}</h3>\n          <div class="icon"><img src="{{weatherData.icon_url}}" alt=""></div>\n          <h3 class="desc">{{weatherData.weather}}</h3>\n          <h1 class="temp">{{weatherData.temp_f}}&deg;</h1>\n        </ion-col>\n      </ion-row>\n\n\n\n      <ion-card>\n        <ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <ion-list>\n          <ion-item>\n            <strong>Location:</strong> {{full_address.full}}\n          </ion-item>\n          <ion-item>\n            <strong>Temp: </strong> {{weatherData.temperature_string}}\n          </ion-item>\n          <ion-item>\n            <strong>Relative Humidity: </strong> {{weatherData.relative_humidity}}\n          </ion-item>\n          <ion-item>\n            <strong>Dewpoint: </strong> {{weatherData.dewpoint_string}}\n          </ion-item>\n          <ion-item>\n            <strong>Visibility: </strong> {{weatherData.visibility_mi}}\n          </ion-item>\n          <ion-item>\n            <strong>Ultra Violet: </strong> {{weatherData.UV}}\n          </ion-item>\n          <button ion-button block outline color="light" (click)="getForecast(trail.latitude,trail.longitude)">How is today?</button>\n\n          <button ion-button block outline color="light" (click)="getMust(trail.latitude,trail.longitude)">Must see places nearby</button>\n\n        </ion-list>\n      </ion-col>\n    </ion-row>\n        </ion-card-content>\n      </ion-card>\n\n    </ion-grid>\n\n\n       <!--<ion-row>\n         <ion-col>\n\n          <p>{{weatherData.UV}}</p>\n           <p>{{trail.full}}</p>\n         </ion-col>\n       </ion-row>-->\n\n  </div>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\weather\weather.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_3__providers_weather_weather__["a" /* WeatherProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], WeatherPage);
+
+//# sourceMappingURL=weather.js.map
+
+/***/ }),
+
+/***/ 304:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MustseePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mustsee_mustsee__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mustseeinfo_mustseeinfo__ = __webpack_require__(305);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MustseePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MustseePage = (function () {
+    function MustseePage(navCtrl, navParams, must) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.must = must;
+        this.mustData = {};
+        this.pho = {};
+        this.lat = navParams.get('lat');
+        this.lon = navParams.get('lon');
+        this.must.mustSeePlaces(this.lat, this.lon)
+            .then(function (data) {
+            _this.mustData = data;
+            _this.response = _this.mustData.response.groups[0].items;
+            //for(let ex of this.response) {
+            //this.cou = ex.venue.photos.count;
+            //}
+            /* this.forecast = this.foreData.forecast;
+             this.txt_forecast = this.forecast.txt_forecast;
+             this.forecastday = this.txt_forecast.forecastday;
+             this.forecastday1=this.forecastday[0];
+             this.forecastday2=this.forecastday[1];*/
+        });
+    }
+    MustseePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MustseePage');
+    };
+    MustseePage.prototype.viewItem = function (placeid) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mustseeinfo_mustseeinfo__["a" /* MustseeinfoPage */], {
+            venueid: placeid
+        });
+    };
+    return MustseePage;
+}());
+MustseePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-mustsee',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mustsee\mustsee.html"*/'<!--\n  Generated template for the MustseePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mustsee</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngFor="let res of response">\n\n    <div *ngIf="res.venue.photos.count==1">\n\n\n      <button ion-item (click)="viewItem(res.venue.id)">\n        <ion-thumbnail item-start>\n    <img src={{res.venue.photos.groups[0].items[0].prefix}}125x125{{res.venue.photos.groups[0].items[0].suffix}}>\n        </ion-thumbnail>\n    {{res.venue.name}}\n      </button>\n\n\n    </div>\n  </div>\n\n\n</ion-content>>\n\n<!--<p>{{response.items[1].venue.name}}</p>-->\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mustsee\mustsee.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mustsee_mustsee__["a" /* MustseeProvider */]])
+], MustseePage);
+
+//# sourceMappingURL=mustsee.js.map
+
+/***/ }),
+
+/***/ 305:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MustseeinfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mustsee_mustsee__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(36);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MustseeinfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MustseeinfoPage = (function () {
+    function MustseeinfoPage(navCtrl, navParams, malls, geolocation) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.malls = malls;
+        this.geolocation = geolocation;
+        this.data = {};
+        this.placesData = {};
+        this.loc = {};
+        this.contact = {};
+        this.open = {};
+        this.venueid = navParams.get('venueid');
+        this.malls.detailedmustseeplaces(this.venueid)
+            .then(function (data) {
+            _this.data = data;
+            _this.placesData = _this.data.response.venue;
+            _this.prefix = _this.data.response.venue.photos.groups[0].items[1].prefix;
+            _this.suffix = _this.data.response.venue.photos.groups[0].items[1].suffix;
+            _this.category = _this.data.response.venue.categories;
+            _this.loc = _this.placesData.location;
+            _this.contact = _this.placesData.contact;
+            _this.rating = _this.placesData.rating;
+            _this.open = _this.placesData.hours;
+            console.log(_this.open);
+        });
+    }
+    MustseeinfoPage.prototype.getUserPosition = function () {
+        var _this = this;
+        this.options = {
+            enableHighAccuracy: true
+        };
+        this.geolocation.getCurrentPosition(this.options).then(function (pos) {
+            _this.currentLat = pos.coords.latitude;
+            _this.currentLong = pos.coords.longitude;
+        }, function (err) {
+            console.log("error : " + err.message);
+        });
+    };
+    MustseeinfoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MustseeinfoPage');
+    };
+    return MustseeinfoPage;
+}());
+MustseeinfoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-mustseeinfo',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mustseeinfo\mustseeinfo.html"*/'<!--\n  Generated template for the MustseeinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>mustseeinfo</ion-title>\n    <ion-buttons right>\n      <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}">\n        <button ion-button icon-only><ion-icon name="navigate"></ion-icon></button> </a>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <img align="center" src={{prefix}}400x250{{suffix}}><br><br>\n\n  <b>{{placesData.name}}</b><br><br>\n  <b>Address:</b> {{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}<br><br>\n  <b>Phone</b>  {{contact.formattedPhone}}<br><br>\n  <b>Rating</b>  {{rating}}<br><br>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\mustseeinfo\mustseeinfo.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mustsee_mustsee__["a" /* MustseeProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]])
+], MustseeinfoPage);
+
+//# sourceMappingURL=mustseeinfo.js.map
+
+/***/ }),
+
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoviesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theatres_theatres__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theatres_theatres__ = __webpack_require__(256);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1257,7 +1736,7 @@ var MoviesPage = (function () {
 }());
 MoviesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-movies',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/movies/movies.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title align="center">GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="background">\n\n<h3 align="center"> Movies & Movie Theatres</h3>\n  <img src="assets/s3.jpg" height="300" width="360">\n  <div><button ion-button block color="dark" [navPush]="theatresPage" outline>Movie Theatres Around</button></div>\n      <button ion-button block color="dark" [navPush]="homePage" outline>Movies Playing Around</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/movies/movies.html"*/
+        selector: 'page-movies',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\movies\movies.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title align="center">GetOnWheels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n\n\n<h3 align="center"> Movies & Movie Theatres</h3>\n\n  <img src="assets/s3.jpg" height="300" width="360">\n\n  <div><button ion-button block color="dark" [navPush]="theatresPage" outline>Movie Theatres Around</button></div>\n\n      <button ion-button block color="dark" [navPush]="homePage" outline>Movies Playing Around</button>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\movies\movies.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], MoviesPage);
@@ -1266,13 +1745,13 @@ MoviesPage = __decorate([
 
 /***/ }),
 
-/***/ 301:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigninPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1302,7 +1781,7 @@ var SigninPage = (function () {
 }());
 SigninPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signin',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/signin/signin.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title align="center">GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="background">\n\n  <ion-card>\n    <ion-card-header>\n      Want to login as New User:\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-line>\n\n\n        <button ion-button block outline color="light"><a href="http://localhost:8100/">New User</a></button>\n\n\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/signin/signin.html"*/,
+        selector: 'page-signin',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\signin\signin.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title align="center">GetOnWheels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Want to login as New User:\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n\n\n\n\n        <button ion-button block outline color="light"><a href="http://localhost:8100/">New User</a></button>\n\n\n\n\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\signin\signin.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], SigninPage);
@@ -1311,15 +1790,16 @@ SigninPage = __decorate([
 
 /***/ }),
 
-/***/ 302:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShoppingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mallsinfo_mallsinfo__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mallsinfo_mallsinfo__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__deals_deals__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1329,6 +1809,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1345,6 +1826,8 @@ var ShoppingPage = (function () {
         };
         this.geolocation.getCurrentPosition(this.options).then(function (pos) {
             _this.currentPos = pos;
+            _this.currentLat = pos.coords.latitude;
+            _this.currentLon = pos.coords.longitude;
             console.log(pos);
             _this.addMap(pos.coords.latitude, pos.coords.longitude);
         }, function (err) {
@@ -1412,6 +1895,12 @@ var ShoppingPage = (function () {
             position: place.geometry.location,
         });
     };
+    ShoppingPage.prototype.getDeals = function (latitude, longitude) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__deals_deals__["a" /* DealsPage */], {
+            lat: latitude,
+            lon: longitude
+        });
+    };
     ShoppingPage.prototype.viewItem = function (placeid) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mallsinfo_mallsinfo__["a" /* MallsinfoPage */], {
             mallsinfo: placeid
@@ -1425,7 +1914,7 @@ __decorate([
 ], ShoppingPage.prototype, "mapElement", void 0);
 ShoppingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-shopping',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/shopping/shopping.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title>Shopping</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content >\n\n  <div #map id="map"></div>\n  <div style="width : 100% ;height: 60%">\n\n    <ion-list>\n      <ion-item *ngFor="let place of places">\n\n        <br>\n        <h3><b>{{place.name}}</b></h3>\n          <p> {{place.types}}</p>\n\n\n        <button ion-button clear item-end (click)="viewItem(place.place_id)"><ion-icon name="star"></ion-icon>View</button>\n\n\n      </ion-item>\n    </ion-list>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/shopping/shopping.html"*/
+        selector: 'page-shopping',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\shopping\shopping.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title>Shopping</ion-title>\n\n    <ion-buttons right>\n\n\n\n\n\n        <button style="background-color: #4CAF50; font-size: 20px; color:white" (click)="getDeals(this.currentLat,this.currentLon)">Get Deals</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content >\n\n\n\n  <div #map id="map"></div>\n\n  <div style="width : 100% ;height: 60%">\n\n\n\n    <ion-list>\n\n      <ion-item *ngFor="let place of places">\n\n\n\n        <br>\n\n        <h3><b>{{place.name}}</b></h3>\n\n          <p> {{place.types}}</p>\n\n\n\n\n\n        <button ion-button clear item-end (click)="viewItem(place.place_id)"><ion-icon name="star"></ion-icon>View</button>\n\n\n\n\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\shopping\shopping.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]])
 ], ShoppingPage);
@@ -1434,13 +1923,13 @@ ShoppingPage = __decorate([
 
 /***/ }),
 
-/***/ 303:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(327);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1448,43 +1937,46 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 321:
+/***/ 327:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_details_details__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_weather_weather__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_theatres_theatres__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_movie_data_movie_data__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_restaurant_map_restaurant_map__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_geolocation__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_details_details__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_weather_weather__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_theatres_theatres__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_movie_data_movie_data__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_restaurant_map_restaurant_map__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_geolocation__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_weather_weather__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_movies_movies__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_mallsinfo_mallsinfo__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_mallsdetails_mallsdetails__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angularfire2__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__app_firebase_config__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angularfire2_auth__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_forecast_forecast__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_signin_signin__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_shopping_shopping__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_google_plus__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_restaurants_restaurants__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_restaurant_info_restaurant_info__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_restaurant_restaurant__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_account_account__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_session_session__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_facebook__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_movies_movies__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_mallsinfo_mallsinfo__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_mallsdetails_mallsdetails__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_theatresinfo_theatresinfo__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_theatresdetails_theatresdetails__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angularfire2__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_firebase_config__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angularfire2_auth__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_forecast_forecast__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_signin_signin__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_shopping_shopping__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_google_plus__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_restaurants_restaurants__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_restaurant_info_restaurant_info__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_restaurant_restaurant__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_account_account__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_session_session__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_facebook__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_deals_deals__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1509,6 +2001,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+ //by rajeswari
+ //by rajeswari
 
 
 
@@ -1538,14 +2033,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__pages_theatres_theatres__["a" /* TheatresPage */],
             __WEBPACK_IMPORTED_MODULE_16__pages_movies_movies__["a" /* MoviesPage */],
             __WEBPACK_IMPORTED_MODULE_8__pages_weather_weather__["a" /* WeatherPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_shopping_shopping__["a" /* ShoppingPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_restaurants_restaurants__["a" /* RestaurantsPage */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_restaurant_info_restaurant_info__["a" /* RestaurantInfoPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_signin_signin__["a" /* SigninPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_forecast_forecast__["a" /* ForecastPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_shopping_shopping__["a" /* ShoppingPage */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_restaurants_restaurants__["a" /* RestaurantsPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_restaurant_info_restaurant_info__["a" /* RestaurantInfoPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_signin_signin__["a" /* SigninPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_forecast_forecast__["a" /* ForecastPage */],
             __WEBPACK_IMPORTED_MODULE_17__pages_mallsinfo_mallsinfo__["a" /* MallsinfoPage */],
             __WEBPACK_IMPORTED_MODULE_13__pages_restaurant_map_restaurant_map__["a" /* RestaurantMapPage */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_account_account__["a" /* AccountPage */]
+            __WEBPACK_IMPORTED_MODULE_31__pages_account_account__["a" /* AccountPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_theatresinfo_theatresinfo__["a" /* TheatresinfoPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_deals_deals__["a" /* DealsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -1554,16 +2051,19 @@ AppModule = __decorate([
                 links: [
                     { loadChildren: '../pages/about/about.module#LoginPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/deals/deals.module#DealsPageModule', name: 'DealsPage', segment: 'deals', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/mustsee/mustsee.module#MustseePageModule', name: 'MustseePage', segment: 'mustsee', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/mustseeinfo/mustseeinfo.module#MustseeinfoPageModule', name: 'MustseeinfoPage', segment: 'mustseeinfo', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/restaurant-info/restaurant-info.module#RestaurantInfoPageModule', name: 'RestaurantInfoPage', segment: 'restaurant-info', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/restaurant-map/restaurant-map.module#RestaurantMapPageModule', name: 'RestaurantMapPage', segment: 'restaurant-map', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/restaurants/restaurants.module#RestaurantsPageModule', name: 'RestaurantsPage', segment: 'restaurants', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/weather/weather.module#WeatherPageModule', name: 'WeatherPage', segment: 'weather', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/restaurants/restaurants.module#RestaurantsPageModule', name: 'RestaurantsPage', segment: 'restaurants', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/weather/weather.module#WeatherPageModule', name: 'WeatherPage', segment: 'weather', priority: 'low', defaultHistory: [] }
                 ]
             }),
-            __WEBPACK_IMPORTED_MODULE_19_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_20__app_firebase_config__["a" /* config */]),
-            __WEBPACK_IMPORTED_MODULE_21_angularfire2_auth__["b" /* AngularFireAuthModule */]
+            __WEBPACK_IMPORTED_MODULE_21_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_22__app_firebase_config__["a" /* config */]),
+            __WEBPACK_IMPORTED_MODULE_23_angularfire2_auth__["b" /* AngularFireAuthModule */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
         entryComponents: [
@@ -1574,14 +2074,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__pages_theatres_theatres__["a" /* TheatresPage */],
             __WEBPACK_IMPORTED_MODULE_16__pages_movies_movies__["a" /* MoviesPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_signin_signin__["a" /* SigninPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_shopping_shopping__["a" /* ShoppingPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_restaurants_restaurants__["a" /* RestaurantsPage */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_restaurant_info_restaurant_info__["a" /* RestaurantInfoPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_forecast_forecast__["a" /* ForecastPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_signin_signin__["a" /* SigninPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_shopping_shopping__["a" /* ShoppingPage */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_restaurants_restaurants__["a" /* RestaurantsPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_restaurant_info_restaurant_info__["a" /* RestaurantInfoPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_forecast_forecast__["a" /* ForecastPage */],
             __WEBPACK_IMPORTED_MODULE_17__pages_mallsinfo_mallsinfo__["a" /* MallsinfoPage */],
             __WEBPACK_IMPORTED_MODULE_13__pages_restaurant_map_restaurant_map__["a" /* RestaurantMapPage */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_account_account__["a" /* AccountPage */]
+            __WEBPACK_IMPORTED_MODULE_31__pages_account_account__["a" /* AccountPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_theatresinfo_theatresinfo__["a" /* TheatresinfoPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_deals_deals__["a" /* DealsPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
@@ -1589,13 +2091,14 @@ AppModule = __decorate([
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
             __WEBPACK_IMPORTED_MODULE_12__providers_movie_data_movie_data__["a" /* MovieDataProvider */],
             __WEBPACK_IMPORTED_MODULE_14__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_21_angularfire2_auth__["a" /* AngularFireAuth */],
+            __WEBPACK_IMPORTED_MODULE_23_angularfire2_auth__["a" /* AngularFireAuth */],
             __WEBPACK_IMPORTED_MODULE_15__providers_weather_weather__["a" /* WeatherProvider */],
-            __WEBPACK_IMPORTED_MODULE_25__ionic_native_google_plus__["a" /* GooglePlus */],
+            __WEBPACK_IMPORTED_MODULE_27__ionic_native_google_plus__["a" /* GooglePlus */],
             __WEBPACK_IMPORTED_MODULE_18__providers_mallsdetails_mallsdetails__["a" /* MallsdetailsProvider */],
-            __WEBPACK_IMPORTED_MODULE_28__providers_restaurant_restaurant__["a" /* RestaurantProvider */],
-            __WEBPACK_IMPORTED_MODULE_30__providers_session_session__["a" /* SessionProvider */],
-            __WEBPACK_IMPORTED_MODULE_31__ionic_native_facebook__["a" /* Facebook */],
+            __WEBPACK_IMPORTED_MODULE_20__providers_theatresdetails_theatresdetails__["a" /* TheatresdetailsProvider */],
+            __WEBPACK_IMPORTED_MODULE_30__providers_restaurant_restaurant__["a" /* RestaurantProvider */],
+            __WEBPACK_IMPORTED_MODULE_32__providers_session_session__["a" /* SessionProvider */],
+            __WEBPACK_IMPORTED_MODULE_33__ionic_native_facebook__["a" /* Facebook */],
         ]
     })
 ], AppModule);
@@ -1604,16 +2107,16 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 466:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_data_movie_data__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_data_movie_data__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_weather_weather__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1645,7 +2148,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/app/app.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\app\app.html"*/,
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__providers_movie_data_movie_data__["a" /* MovieDataProvider */],
             __WEBPACK_IMPORTED_MODULE_5__providers_weather_weather__["a" /* WeatherProvider */]
@@ -1658,7 +2161,7 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 467:
+/***/ 473:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1681,8 +2184,8 @@ var config = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeatherProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1750,10 +2253,10 @@ WeatherProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_plus__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_plus__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(395);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_session_session__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(128);
@@ -1902,7 +2405,7 @@ var AboutPage = (function () {
 }());
 AboutPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-about',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/about/about.html"*/'\n<ion-content class="background">\n  <ion-card>\n    <ion-card-header>\n\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-line>\n        <ion-item>\n          <ion-input type="text" placeholder="Username" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input type="password" placeholder="Password" min="8"[(ngModel)]="user.password"></ion-input>\n        </ion-item>\n        <button ion-button block outline color="light" (click)="login(user)">Log in</button>\n      </ion-list>\n\n    </ion-card-content>\n    <button ion-button block color="danger" (click)="goologin()" *ngIf="!userProfile">\n      <ion-icon name="logo-googleplus"></ion-icon>\n      Login with Google\n    </button>\n  </ion-card>\n\n  <div>\n    <div *ngIf="isLoggedIn; else facebookLogin">\n      \n      <p>\n        <button ion-button icon-right (click)="logout()">\n          Logout\n        </button>\n      </p>\n    </div>\n    <ng-template #facebookLogin>\n      <button ion-button icon-right (click)="loginFB()">\n        Login with\n        <ion-icon name="logo-facebook"></ion-icon>\n      </button>\n    </ng-template>\n\n  </div>\n\n\n  <button  ion-item (click)="register()">Don\'t have an account? Sign up</button>\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/about/about.html"*/
+        selector: 'page-about',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\about\about.html"*/'\n\n<ion-content class="background">\n\n  <ion-card>\n\n    <ion-card-header>\n\n\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n        <ion-item>\n\n          <ion-input type="text" placeholder="Username" [(ngModel)]="user.email"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-input type="password" placeholder="Password" min="8"[(ngModel)]="user.password"></ion-input>\n\n        </ion-item>\n\n        <button ion-button block outline color="light" (click)="login(user)">Log in</button>\n\n      </ion-list>\n\n\n\n    </ion-card-content>\n\n    <button ion-button block color="danger" (click)="goologin()" *ngIf="!userProfile">\n\n      <ion-icon name="logo-googleplus"></ion-icon>\n\n      Login with Google\n\n    </button>\n\n  </ion-card>\n\n\n\n  <div>\n\n    <div *ngIf="isLoggedIn; else facebookLogin">\n\n      \n\n      <p>\n\n        <button ion-button icon-right (click)="logout()">\n\n          Logout\n\n        </button>\n\n      </p>\n\n    </div>\n\n    <ng-template #facebookLogin>\n\n      <button ion-button icon-right (click)="loginFB()">\n\n        Login with\n\n        <ion-icon name="logo-facebook"></ion-icon>\n\n      </button>\n\n    </ng-template>\n\n\n\n  </div>\n\n\n\n\n\n  <button  ion-item (click)="register()">Don\'t have an account? Sign up</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\about\about.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_plus__["a" /* GooglePlus */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */], __WEBPACK_IMPORTED_MODULE_5__providers_session_session__["a" /* SessionProvider */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__["a" /* Facebook */]])
@@ -1912,5 +2415,5 @@ AboutPage = __decorate([
 
 /***/ })
 
-},[303]);
+},[309]);
 //# sourceMappingURL=main.js.map

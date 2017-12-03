@@ -41,6 +41,10 @@ import {AccountPage} from "../pages/account/account";
 
 import { SessionProvider } from '../providers/session/session';
 import { Facebook } from '@ionic-native/facebook';
+import {DealsPage} from "../pages/deals/deals";
+import {MustseePage} from "../pages/mustsee/mustsee";
+import {MustseeinfoPage} from "../pages/mustseeinfo/mustseeinfo";
+import {MustseeProvider} from "../providers/mustsee/mustsee";
 
 
 @NgModule({
@@ -61,7 +65,10 @@ import { Facebook } from '@ionic-native/facebook';
     MallsinfoPage,
     RestaurantMapPage,
     AccountPage,
-    TheatresinfoPage //by rajeswari
+    TheatresinfoPage, //by rajeswari
+    DealsPage,
+    MustseePage,
+    MustseeinfoPage
   ],
   imports: [
     BrowserModule,
@@ -87,7 +94,10 @@ import { Facebook } from '@ionic-native/facebook';
     MallsinfoPage,
     RestaurantMapPage,
     AccountPage,
-    TheatresinfoPage //by rajeswari
+    TheatresinfoPage, //by rajeswari
+    DealsPage,
+    MustseePage,
+    MustseeinfoPage
   ],
   providers: [
     StatusBar,
@@ -103,6 +113,7 @@ import { Facebook } from '@ionic-native/facebook';
     RestaurantProvider,
     SessionProvider,
     Facebook,
+    MustseeProvider
 
   ]
 })

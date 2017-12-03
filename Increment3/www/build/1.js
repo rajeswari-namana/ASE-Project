@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 470:
+/***/ 479:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(485);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,13 @@ RegisterPageModule = __decorate([
 
 /***/ }),
 
-/***/ 476:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -131,7 +131,7 @@ var RegisterPage = (function () {
 }());
 RegisterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-register',template:/*ion-inline-start:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/register/register.html"*/'<ion-header>\n  <ion-navbar color="dark">\n    <ion-title align="center">GetOnWheels</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="background">\n\n  <ion-card>\n    <ion-card-header>\n      Register Form\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-line>\n\n        <ion-item>\n          <ion-input type="text" placeholder="Email Id" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>\n        </ion-item>\n\n        <button ion-button block outline color="light" (click)="register(user)">Register</button>\n\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/shriniketsarkar/Ase_Documents/ASE_Project/increment3/Get-On-Wheels-Project/Increment3/src/pages/register/register.html"*/,
+        selector: 'page-register',template:/*ion-inline-start:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\register\register.html"*/'<ion-header>\n\n  <ion-navbar color="dark">\n\n    <ion-title align="center">GetOnWheels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Register Form\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n\n\n        <ion-item>\n\n          <ion-input type="text" placeholder="Email Id" [(ngModel)]="user.email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>\n\n        </ion-item>\n\n\n\n        <button ion-button block outline color="light" (click)="register(user)">Register</button>\n\n\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bhargavii\Desktop\Git\Get-On-Wheels-Project\Increment3\src\pages\register\register.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], RegisterPage);

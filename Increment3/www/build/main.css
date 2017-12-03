@@ -29406,7 +29406,7 @@ page-home .card-background-page ion-card {
 
 page-home .card-background-page .card-title {
   position: absolute;
-  top: 36%;
+  top: 30%;
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
@@ -29414,6 +29414,14 @@ page-home .card-background-page .card-title {
 }
 
 page-home .card-background-page .card-subtitle {
+  font-size: 1.25em;
+  position: absolute;
+  top: 42%;
+  width: 100%;
+  color: #fff;
+}
+
+page-home .card-background-page .card-subsubtitle {
   font-size: 1.25em;
   position: absolute;
   top: 52%;
@@ -29425,8 +29433,72 @@ page-home .card-background-page .ion-md-heart {
   color: red;
 }
 
-page-mallsinfo .scroll-content {
-  overflow-y: auto;
+page-mallsinfo ion-scroll {
+  width: 100%;
+  height: 150px;
+  white-space: nowrap;
+}
+
+page-mallsinfo ion-scroll ::-webkit-scrollbar {
+  display: none;
+}
+
+page-mallsinfo .info {
+  padding: 10px 15px;
+  margin: 10px 0px;
+  background-color: #FFFFFF;
+}
+
+page-mallsinfo .photos {
+  margin-bottom: 10px;
+}
+
+page-mallsinfo .photos img {
+  margin: 0px 2px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: -webkit-transform 0.25s ease;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+page-mallsinfo .photos img:active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+page-mallsinfo .photos .reviews, page-mallsinfo .photos .photos {
+  background-color: #FFFFFF;
+  padding: 2px 0px;
+}
+
+page-mallsinfo .photos .reviews h3, page-mallsinfo .photos .photos h3 {
+  margin-top: 0px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+page-mallsinfo .photos .active {
+  color: red;
+}
+
+page-mallsinfo ion-icon {
+  align: right;
+}
+
+page-mallsinfo .flex-right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+page-mustseeinfo {
+  font-size: 17px !important;
 }
 
 /*.scroll-content {
@@ -29647,6 +29719,10 @@ page-theatres .card-background-page .card-subtitle {
   top: 52%;
   width: 100%;
   color: #fff;
+}
+
+page-theatresinfo .scroll-content {
+  overflow-y: auto;
 }
 
 page-weather .background {

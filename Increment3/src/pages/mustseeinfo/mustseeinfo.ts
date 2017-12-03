@@ -63,6 +63,9 @@ options : GeolocationOptions;
       console.log("error : " + err.message);
     });
   }
+  ionViewDidEnter(){
+    this.getUserPosition();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MustseeinfoPage');
