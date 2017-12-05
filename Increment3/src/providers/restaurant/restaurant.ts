@@ -20,7 +20,7 @@ export class RestaurantProvider {
 
   constructor(public http: Http) {
     this.restaurants = null;
-    this.apiURL='https://developers.zomato.com/api/v2.1/search?entity_id=856&entity_type=city&lat=39.04&lon=-94.59&radius=5000&count=10';
+    this.apiURL='https://developers.zomato.com/api/v2.1/search?entity_id=856&entity_type=city&lat=39.04&lon=-94.59&radius=50000';
     }
 
   loadRestaurantsNearLocation() {
