@@ -70,7 +70,10 @@
 */
   page-about {
 
-
+    .facebookDivAlignment {
+      display: flex;
+      justify-content: center;
+    }
 
     .background {
       background-image: url('../assets/s1.jpg');
