@@ -1,0 +1,77 @@
+<!--
+  Generated template for the MustseeinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>mustseeinfo</ion-title>
+    <ion-buttons right>
+      <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}">
+        <button ion-button icon-only><ion-icon name="navigate"></ion-icon></button> </a>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+  <div class="photos">
+    <h3>Gallery</h3>
+    <ion-scroll scrollX="true" >
+      <ion-row >
+        <ion-col>
+          <!--<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=350&photoreference={{hic.photo_reference}}&sensor=false&key=AIzaSyCXpd1MNs44B5NJ5xs2PsTDeGFjlXC8ORw" *ngFor="let hic of pic">
+          -->
+          <img src={{pic.prefix}}400x250{{pic.suffix}} *ngFor="let pic of lot;
+          let i=index " ></ion-col>
+
+
+      </ion-row>
+    </ion-scroll>
+  </div>
+
+
+
+  <!--
+    <ion-item *ngFor="let pix of lot">
+      <img align="center" src={{pix.prefix}}400x250{{pix.suffix}}><br><br>
+    </ion-item>-->
+
+<!--
+  <ion-item *ngFor="let pix of lot">
+    <img align="center" src={{pix.prefix}}400x250{{pix.suffix}}><br><br>
+  </ion-item>-->
+
+  <b>{{placesData.name}}</b><br><br>
+  <b>Address:</b> {{loc.address}}, {{loc.crossStreet}}, {{loc.postalCode}}, {{loc.city}}, {{loc.state}}, {{loc.country}}<br><br>
+  <b>Phone</b>  {{contact.formattedPhone}}<br><br>
+  <b>Rating</b>  {{rating}}<br><br>
+  <h3>Reviews</h3>
+
+  <ion-item *ngFor="let rev of tips">
+   <!-- <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">-->
+    <img src={{rev.user.photo.prefix}}40x40{{rev.user.photo.suffix}} width="40px" height="40px" border-radius="50%" object-fit="cover">
+    &nbsp; <b>{{rev.user.firstName}}&nbsp;{{rev.user.lastName}}</b> <br>
+    <p text-wrap><b>{{rev.text}}</b></p>
+  </ion-item>
+
+<!--
+
+  <ion-item text-wrap *ngFor="let hel of rev">
+    <p> <p>
+    <img [src]="hel.profile_photo_url" width="30px" height="30px" border-radius="50%" object-fit="cover">
+    {{hel.author_name}}
+    <p><ion-icon name="star" *ngFor="let star of getArray(hel.rating)"></ion-icon></p>
+    <p> {{hel.text}}</p></ion-item>
+-->
+
+</ion-content>
+
+

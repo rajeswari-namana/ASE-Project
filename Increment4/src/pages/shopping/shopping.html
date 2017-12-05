@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Shopping</ion-title>
+    <ion-buttons right>
+
+
+        <button style="background-color: #4CAF50; font-size: 20px; color:white" (click)="getDeals(this.currentLat,this.currentLon)">Get Deals</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content >
+
+  <div #map id="map"></div>
+  <div style="width : 100% ;height: 60%">
+
+    <ion-list>
+      <ion-item *ngFor="let place of places">
+
+        <br>
+        <h3><b>{{place.name}}</b></h3>
+          <p> {{place.types}}</p>
+
+
+        <button ion-button clear item-end (click)="viewItem(place.place_id)"><ion-icon name="star"></ion-icon>View</button>
+
+
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>
+

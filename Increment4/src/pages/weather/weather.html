@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar align="center" color="dark">
+    <ion-title>GetOnWheels</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="background">
+
+  <div style="width : 100% ;height: 100%">
+    <ion-grid *ngIf="weather">
+      <ion-row>
+        <ion-col align="center">
+          <h3 class="location">{{trail.full}}</h3>
+          <div class="icon"><img src="{{weatherData.icon_url}}" alt=""></div>
+          <h3 class="desc">{{weatherData.weather}}</h3>
+          <h1 class="temp">{{weatherData.temp_f}}&deg;</h1>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-card>
+        <ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <strong>Location:</strong> {{full_address.full}}
+          </ion-item>
+          <ion-item>
+            <strong>Temp: </strong> {{weatherData.temperature_string}}
+          </ion-item>
+          <ion-item>
+            <strong>Relative Humidity: </strong> {{weatherData.relative_humidity}}
+          </ion-item>
+          <ion-item>
+            <strong>Dewpoint: </strong> {{weatherData.dewpoint_string}}
+          </ion-item>
+          <ion-item>
+            <strong>Visibility: </strong> {{weatherData.visibility_mi}}
+          </ion-item>
+          <ion-item>
+            <strong>Ultra Violet: </strong> {{weatherData.UV}}
+          </ion-item>
+          <button ion-button block outline color="light" (click)="getForecast(trail.latitude,trail.longitude)">How is today?</button>
+
+          <button ion-button block outline color="light" (click)="getMust(trail.latitude,trail.longitude)">Must see places nearby</button>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-grid>
+
+
+       <!--<ion-row>
+         <ion-col>
+
+          <p>{{weatherData.UV}}</p>
+           <p>{{trail.full}}</p>
+         </ion-col>
+       </ion-row>-->
+
+  </div>
+
+
+</ion-content>

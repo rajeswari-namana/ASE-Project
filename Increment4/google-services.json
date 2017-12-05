@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "572221592836",
+    "firebase_url": "https://getonwheels-1a7f2.firebaseio.com",
+    "project_id": "getonwheels-1a7f2",
+    "storage_bucket": "getonwheels-1a7f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572221592836:android:6cfe319e8e7b128c",
+        "android_client_info": {
+          "package_name": "com.ionic.getonwheels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572221592836-s6b204gv7ougadec20mpap4q2lfrjihd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionic.getonwheels",
+            "certificate_hash": "a19f5ab20917a83439a7ecc99afc51370e6c60b8"
+          }
+        },
+        {
+          "client_id": "572221592836-dm6i8m9oegh30r84uej3d6dff6oi2g0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZmhqd_h3_3RfQz8RBtC2QggVaD8UFqE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572221592836-dm6i8m9oegh30r84uej3d6dff6oi2g0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

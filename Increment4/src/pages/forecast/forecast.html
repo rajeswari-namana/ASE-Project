@@ -1,0 +1,55 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Forecast</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <!-- <ion-grid>
+    <ion-row>
+      <ion-col col-8>
+        <h3>{{forecastday1.title}}</h3></ion-col>
+      <ion-col>
+        <img src="{{forecastday1.icon_url}}" alt=""></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>{{forecastday1.fcttext}}</ion-col>
+
+
+    </ion-row><br><br>
+    <ion-row>
+      <ion-col col-8>
+        <h3>{{forecastday2.title}}</h3></ion-col>
+      <ion-col>
+        <img src="{{forecastday2.icon_url}}" alt=""></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>{{forecastday2.fcttext}}</ion-col>
+
+
+    </ion-row>
+    </ion-grid>-->
+  <ion-grid>
+    <ion-item>
+    <ion-row>
+      <ion-col><b>Time</b></ion-col>
+
+      <ion-col><b>Condition</b></ion-col>
+    </ion-row>
+    </ion-item>
+
+  <ion-item *ngFor="let time of timely">
+  <ion-row>
+    <ion-col >{{this.time.FCTTIME.civil}}</ion-col>
+  <ion-col col-2><img src="{{this.time.icon_url}}" alt=""> </ion-col>
+    <ion-col>{{this.time.condition}}</ion-col>
+  </ion-row>
+  </ion-item>
+
+  </ion-grid>
+</ion-content>
+

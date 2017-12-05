@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title align="center">GetOnWheels</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h3 align="center">{{details.title}}</h3>
+  <ion-card>
+    <ion-card-header><img src="http://image.tmdb.org/t/p/w300/{{details.backdrop_path}}"></ion-card-header>
+    <ion-card-content>
+      <ion-card-title><b>Popularity: </b></ion-card-title>{{details.popularity}}
+      <ion-card-title><b>Release Date: </b></ion-card-title>{{details.release_date}}
+      <ion-card-title><b>Overview: </b></ion-card-title>{{details.overview}}
+      <ion-card-header><a href="{{link}}" target='myIframe' >WATCH TRAILER</a></ion-card-header>
+      <iframe width="310" height="315" name='myIframe' frameborder="0"></iframe>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+

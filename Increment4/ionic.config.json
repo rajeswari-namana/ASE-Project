@@ -1,0 +1,14 @@
+{
+  "name": "moviesAround",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "http://localhost:8100/api",
+      "proxyUrl": "https://api.uclassify.com/v1/rajeswari/sentiment/classify?readkey=H2NmEMjuRiLt&text=49.9999"
+    }
+  ]
+}
